@@ -20,6 +20,8 @@
     "dark-mode-toggle",
     "react",
     "vue",
+    "angular",
+    "astro",
     "tailwindcss",
     "typescript",
     "framework-agnostic"
@@ -46,6 +48,11 @@
       "types": "./dist/vue/index.d.ts",
       "import": "./dist/vue/index.js",
       "require": "./dist/vue/index.cjs"
+    },
+    "./angular": {
+      "types": "./dist/angular/index.d.ts",
+      "import": "./dist/angular/index.js",
+      "require": "./dist/angular/index.cjs"
     },
     "./vanilla": {
       "types": "./dist/vanilla/index.d.ts",
@@ -77,10 +84,14 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
+    "@angular/core": ">=16.0.0",
     "react": ">=16.8.0",
     "vue": ">=3.0.0"
   },
   "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    },
     "react": {
       "optional": true
     },
@@ -89,6 +100,7 @@
     }
   },
   "devDependencies": {
+    "@angular/core": "^17.3.0",
     "@types/node": "^20.14.0",
     "@types/react": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
@@ -99,11 +111,13 @@
     "prettier": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rxjs": "^7.8.1",
     "tailwindcss": "^3.4.4",
     "tsup": "^8.1.0",
     "typescript": "^5.5.2",
     "vitest": "^1.6.0",
-    "vue": "^3.4.30"
+    "vue": "^3.4.30",
+    "zone.js": "^0.14.6"
   },
   "engines": {
     "node": ">=18"

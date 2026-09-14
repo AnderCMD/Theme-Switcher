@@ -6,6 +6,7 @@ export default defineConfig([
       index: 'src/index.ts',
       'react/index': 'src/react/index.ts',
       'vue/index': 'src/vue/index.ts',
+      'angular/index': 'src/angular/index.ts',
       'vanilla/index': 'src/vanilla/index.ts',
       'tailwind/index': 'src/tailwind/index.ts',
     },
@@ -15,6 +16,6 @@ export default defineConfig([
     clean: true,
     splitting: false,
     treeshake: true,
-    external: ['react', 'react-dom', 'vue'],
+    external: ['react', 'react-dom', 'vue', '@angular/core'],
   },
 ]);
