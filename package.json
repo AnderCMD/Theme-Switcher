@@ -1,6 +1,6 @@
 {
   "name": "theme-switcher-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny, framework-agnostic dark/light theme switcher with 10 built-in animated toggle designs. Works with plain HTML/CSS, React, Vue, and Tailwind CSS.",
   "author": "Ander CMD (https://github.com/AnderCMD)",
   "license": "MIT",
