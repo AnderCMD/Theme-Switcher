@@ -151,18 +151,18 @@ export default {
 
 ## The 10 built-in designs
 
-| Variant id       | Name           | Description                                                        |
-| ---------------- | -------------- | ------------------------------------------------------------------- |
-| `classic-sky`     | Classic Sky    | Animated day/night sky with drifting clouds, stars, and a moon.    |
-| `minimal-pill`    | Minimal Pill   | Clean rounded pill with a sliding thumb and cross-fading icons.    |
-| `macos`           | macOS          | A faithful recreation of the macOS System Settings toggle.         |
-| `neumorphic`      | Neumorphic     | Soft-UI switch with inset/raised shadows.                          |
-| `glassmorphism`   | Glassmorphism  | Frosted-glass track with backdrop blur.                            |
-| `retro-led`       | Retro LED      | Chunky 8-bit switch with hard steps and neon LED labels.           |
-| `gradient-orb`    | Gradient Orb   | Dark track with a glowing gradient orb thumb.                      |
-| `icon-button`     | Icon Button    | A single circular button that rotates between sun and moon.        |
-| `terminal`        | Terminal       | Cyberpunk terminal look with neon green monospace text.            |
-| `line`            | Line           | Ultra-minimal single-line track with a gliding dot.                |
+| Variant id      | Name          | Description                                                     |
+| --------------- | ------------- | --------------------------------------------------------------- |
+| `classic-sky`   | Classic Sky   | Animated day/night sky with drifting clouds, stars, and a moon. |
+| `minimal-pill`  | Minimal Pill  | Clean rounded pill with a sliding thumb and cross-fading icons. |
+| `macos`         | macOS         | A faithful recreation of the macOS System Settings toggle.      |
+| `neumorphic`    | Neumorphic    | Soft-UI switch with inset/raised shadows.                       |
+| `glassmorphism` | Glassmorphism | Frosted-glass track with backdrop blur.                         |
+| `retro-led`     | Retro LED     | Chunky 8-bit switch with hard steps and neon LED labels.        |
+| `gradient-orb`  | Gradient Orb  | Dark track with a glowing gradient orb thumb.                   |
+| `icon-button`   | Icon Button   | A single circular button that rotates between sun and moon.     |
+| `terminal`      | Terminal      | Cyberpunk terminal look with neon green monospace text.         |
+| `line`          | Line          | Ultra-minimal single-line track with a gliding dot.             |
 
 Every variant is import-only — pick one stylesheet from `@andercmd/theme-switcher/styles/variants/*.css`, plus the shared `base.css`. See [`examples/vanilla/index.html`](./examples/vanilla/index.html) for a page that renders all 10 side by side.
 
@@ -189,18 +189,18 @@ Target the checked state with `.theme-switch__checkbox:checked + .theme-switch__
 new ThemeController(options?: ThemeControllerOptions)
 ```
 
-| Option                       | Type                              | Default                | Description                                                            |
-| ---------------------------- | ---------------------------------- | ----------------------- | ------------------------------------------------------------------------ |
-| `storageKey`                 | `string`                          | `'theme-switcher:theme'` | `localStorage` key used for persistence.                               |
-| `target`                     | `HTMLElement`                     | `document.documentElement` | Element that receives the theme class/attribute.                    |
-| `darkClassName`               | `string \| null`                   | `'dark'`                | Class applied when the resolved theme is `dark`. `null` disables it.   |
-| `lightClassName`              | `string \| null`                   | `null`                   | Class applied when the resolved theme is `light`.                      |
-| `attribute`                  | `string \| null`                   | `'data-theme'`           | Data attribute mirroring the resolved theme.                           |
-| `defaultPreference`          | `'light' \| 'dark' \| 'system'`     | `'system'`               | Preference used before anything is stored.                             |
-| `disablePersistence`         | `boolean`                          | `false`                  | Skip reading/writing `localStorage`.                                   |
-| `disableSystemPreference`    | `boolean`                          | `false`                  | Skip following `prefers-color-scheme`.                                 |
-| `disableCrossTabSync`        | `boolean`                          | `false`                  | Skip syncing across tabs via the `storage` event.                      |
-| `suppressTransitionOnChange` | `boolean`                          | `true`                   | Briefly disable CSS transitions while applying a theme change.         |
+| Option                       | Type                            | Default                    | Description                                                          |
+| ---------------------------- | ------------------------------- | -------------------------- | -------------------------------------------------------------------- |
+| `storageKey`                 | `string`                        | `'theme-switcher:theme'`   | `localStorage` key used for persistence.                             |
+| `target`                     | `HTMLElement`                   | `document.documentElement` | Element that receives the theme class/attribute.                     |
+| `darkClassName`              | `string \| null`                | `'dark'`                   | Class applied when the resolved theme is `dark`. `null` disables it. |
+| `lightClassName`             | `string \| null`                | `null`                     | Class applied when the resolved theme is `light`.                    |
+| `attribute`                  | `string \| null`                | `'data-theme'`             | Data attribute mirroring the resolved theme.                         |
+| `defaultPreference`          | `'light' \| 'dark' \| 'system'` | `'system'`                 | Preference used before anything is stored.                           |
+| `disablePersistence`         | `boolean`                       | `false`                    | Skip reading/writing `localStorage`.                                 |
+| `disableSystemPreference`    | `boolean`                       | `false`                    | Skip following `prefers-color-scheme`.                               |
+| `disableCrossTabSync`        | `boolean`                       | `false`                    | Skip syncing across tabs via the `storage` event.                    |
+| `suppressTransitionOnChange` | `boolean`                       | `true`                     | Briefly disable CSS transitions while applying a theme change.       |
 
 Methods: `getPreference()`, `getResolvedTheme()`, `getState()`, `setPreference()`, `setDark()`, `setLight()`, `useSystemPreference()`, `toggle()`, `subscribe(listener)`, `destroy()`.
 

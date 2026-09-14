@@ -12,17 +12,17 @@ npm install
 
 Useful scripts:
 
-| Script                 | What it does                                             |
-| ---------------------- | --------------------------------------------------------- |
-| `npm run dev`          | Builds the library in watch mode.                        |
-| `npm run build`        | Produces the production `dist/` output.                  |
-| `npm test`             | Runs the Vitest suite once.                               |
-| `npm run test:watch`   | Runs Vitest in watch mode.                                 |
-| `npm run typecheck`    | Type-checks the project without emitting files.           |
-| `npm run lint`         | Lints `src/` and `test/` with ESLint.                      |
-| `npm run lint:fix`     | Same as above, auto-fixing what it can.                    |
-| `npm run format`       | Formats the repo with Prettier.                            |
-| `npm run format:check` | Checks formatting without writing changes (used in CI).   |
+| Script                 | What it does                                            |
+| ---------------------- | ------------------------------------------------------- |
+| `npm run dev`          | Builds the library in watch mode.                       |
+| `npm run build`        | Produces the production `dist/` output.                 |
+| `npm test`             | Runs the Vitest suite once.                             |
+| `npm run test:watch`   | Runs Vitest in watch mode.                              |
+| `npm run typecheck`    | Type-checks the project without emitting files.         |
+| `npm run lint`         | Lints `src/` and `test/` with ESLint.                   |
+| `npm run lint:fix`     | Same as above, auto-fixing what it can.                 |
+| `npm run format`       | Formats the repo with Prettier.                         |
+| `npm run format:check` | Checks formatting without writing changes (used in CI). |
 
 ## Branching model
 
@@ -48,7 +48,7 @@ We loosely follow [Conventional Commits](https://www.conventionalcommits.org/) (
 - Keep PRs focused on a single change.
 - Add/adjust tests for behavior changes in `src/core`.
 - Run `npm run lint`, `npm run typecheck`, and `npm test` before opening the PR — CI runs the same checks.
-- Describe *why* the change is needed, not just what changed.
+- Describe _why_ the change is needed, not just what changed.
 
 ## Reporting bugs / requesting features
 
