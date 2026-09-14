@@ -1,0 +1,64 @@
+/**
+ * Neon Tube
+ * A glowing glass-tube outline switch, like a neon shop sign.
+ */
+.theme-switch--neon-tube {
+  --track-width: 4em;
+  --track-height: 2em;
+  --thumb-size: 1.4em;
+  --tube-off: #3a1f4d;
+  --tube-on: #ff2ec4;
+  --bg: #0a0710;
+  font-size: 12px;
+}
+
+.theme-switch--neon-tube .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--bg);
+  border-radius: 999px;
+  border: 0.12em solid var(--tube-off);
+  box-shadow:
+    0 0 0.3em var(--tube-off),
+    inset 0 0 0.3em var(--tube-off);
+  position: relative;
+  padding: 0.2em;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-switch--neon-tube .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--tube-off);
+  box-shadow:
+    0 0 0.4em var(--tube-off),
+    0 0 0.8em var(--tube-off);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-switch--neon-tube
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  border-color: var(--tube-on);
+  box-shadow:
+    0 0 0.6em var(--tube-on),
+    inset 0 0 0.6em var(--tube-on);
+}
+
+.theme-switch--neon-tube
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  background: var(--tube-on);
+  box-shadow:
+    0 0 0.6em var(--tube-on),
+    0 0 1.2em var(--tube-on);
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.4em));
+}

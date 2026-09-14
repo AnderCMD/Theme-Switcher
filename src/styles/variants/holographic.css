@@ -1,0 +1,52 @@
+/**
+ * Holographic
+ * An iridescent foil-gradient switch that shifts hue as it slides.
+ */
+.theme-switch--holographic {
+  --track-width: 4em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  font-size: 12px;
+}
+
+.theme-switch--holographic .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  background: linear-gradient(120deg, #ff9ecb, #ffe08a, #9ef0d6, #9ecbff, #d19eff, #ff9ecb);
+  background-size: 250% 250%;
+  background-position: 0% 50%;
+  box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.15);
+  transition: background-position 0.5s ease;
+}
+
+.theme-switch--holographic .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(0.2em);
+  backdrop-filter: blur(0.2em);
+  box-shadow:
+    0 0.15em 0.3em rgba(0, 0, 0, 0.2),
+    inset 0 0 0.3em rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--holographic
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background-position: 100% 50%;
+}
+
+.theme-switch--holographic
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+}

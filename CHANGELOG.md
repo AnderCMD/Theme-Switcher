@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-14
+
+### Added
+
+- 20 new toggle designs, bringing the total to 30: Rocker, Eclipse, Papercut, Neon Tube, Pixel, Flip Card, Droplet, Brass Lever, Origami, Aurora, Brutalist, Candy, Wood, Holographic, Matrix, Lava, Crystal, Vinyl, Constellation, Sunrise.
+
 ## [1.0.1] - 2026-09-14
 
 First public release, published as `theme-switcher-ts`. (Two earlier publish attempts —
@@ -27,5 +33,6 @@ abandoned; `1.0.1` is the first version that actually went live.)
 - A live docs/demo site deployed to GitHub Pages, dogfooding the published build.
 - Test suite for the core controller, ESLint + Prettier configuration, and CI workflow.
 
-[Unreleased]: https://github.com/AnderCMD/Theme-Switcher/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/AnderCMD/Theme-Switcher/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/AnderCMD/Theme-Switcher/releases/tag/v1.1.0
 [1.0.1]: https://github.com/AnderCMD/Theme-Switcher/releases/tag/v1.0.1

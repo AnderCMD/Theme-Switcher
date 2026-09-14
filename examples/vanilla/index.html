@@ -4,17 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Theme Switcher — All Variants</title>
-    <link rel="stylesheet" href="../../src/styles/base.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/classic-sky.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/minimal-pill.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/macos.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/neumorphic.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/glassmorphism.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/retro-led.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/gradient-orb.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/icon-button.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/terminal.css" />
-    <link rel="stylesheet" href="../../src/styles/variants/line.css" />
+    <link rel="stylesheet" href="../../src/styles/index.css" />
     <style>
       body {
         font-family:
@@ -61,31 +51,18 @@
   </head>
   <body>
     <h1>Theme Switcher</h1>
-    <p>All 10 built-in variants, wired to the same shared theme. Click any of them.</p>
+    <p>All 30 built-in variants, wired to the same shared theme. Click any of them.</p>
 
     <div class="grid" id="grid"></div>
 
     <script type="module">
-      import { mountThemeSwitch, ThemeController } from '../../src/vanilla/index.ts';
-
-      const variants = [
-        'classic-sky',
-        'minimal-pill',
-        'macos',
-        'neumorphic',
-        'glassmorphism',
-        'retro-led',
-        'gradient-orb',
-        'icon-button',
-        'terminal',
-        'line',
-      ];
+      import { mountThemeSwitch, ThemeController, VARIANT_IDS } from '../../src/vanilla/index.ts';
 
       // Share a single controller so every card stays in sync.
       const controller = new ThemeController();
       const grid = document.getElementById('grid');
 
-      for (const variant of variants) {
+      for (const variant of VARIANT_IDS) {
         const card = document.createElement('div');
         card.className = 'card';
 

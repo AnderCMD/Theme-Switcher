@@ -1,0 +1,80 @@
+/**
+ * Wood
+ * A varnished wooden switch plate with visible grain and brass screws.
+ */
+.theme-switch--wood {
+  --panel-w: 4.4em;
+  --panel-h: 2.4em;
+  --wood-base: #8a5a34;
+  --wood-grain: #7a4d2a;
+  --track-bg: #6b4123;
+  --knob: #d8ad72;
+  --brass: #c8963e;
+  font-size: 12px;
+}
+
+.theme-switch--wood .theme-switch__panel {
+  width: var(--panel-w);
+  height: var(--panel-h);
+  background: repeating-linear-gradient(
+    100deg,
+    var(--wood-base) 0px,
+    var(--wood-base) 6px,
+    var(--wood-grain) 7px,
+    var(--wood-base) 10px
+  );
+  border-radius: 0.3em;
+  position: relative;
+  box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch--wood .theme-switch__screw {
+  position: absolute;
+  width: 0.35em;
+  height: 0.35em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--brass), #7a5620 70%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch--wood .theme-switch__screw--tl {
+  top: 0.25em;
+  left: 0.25em;
+}
+.theme-switch--wood .theme-switch__screw--tr {
+  top: 0.25em;
+  right: 0.25em;
+}
+.theme-switch--wood .theme-switch__screw--bl {
+  bottom: 0.25em;
+  left: 0.25em;
+}
+.theme-switch--wood .theme-switch__screw--br {
+  bottom: 0.25em;
+  right: 0.25em;
+}
+
+.theme-switch--wood .theme-switch__track {
+  position: absolute;
+  inset: 0.55em 0.9em;
+  background: var(--track-bg);
+  border-radius: 999px;
+  box-shadow: inset 0 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+.theme-switch--wood .theme-switch__knob {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--knob), var(--brass) 80%);
+  position: absolute;
+  top: 50%;
+  left: 0.1em;
+  transform: translateY(-50%);
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.5);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--wood .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__knob {
+  left: calc(100% - 1.1em);
+}

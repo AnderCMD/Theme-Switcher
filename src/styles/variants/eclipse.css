@@ -1,0 +1,87 @@
+/**
+ * Eclipse
+ * A sun and moon disc that slide into total eclipse.
+ */
+.theme-switch--eclipse {
+  --track-width: 4.4em;
+  --track-height: 2.2em;
+  --disc-size: 1.9em;
+  --sun-color: #f5a623;
+  --moon-color: #2b2f38;
+  --track-bg: #cfe8f7;
+  --track-bg-dark: #0c0e16;
+  font-size: 12px;
+}
+
+.theme-switch--eclipse .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--track-bg);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+.theme-switch--eclipse .theme-switch__corona {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(255, 220, 150, 0.6), transparent 70%);
+  transition: opacity 0.4s ease;
+}
+
+.theme-switch--eclipse .theme-switch__sun-disc {
+  position: absolute;
+  top: 50%;
+  left: 0.2em;
+  width: var(--disc-size);
+  height: var(--disc-size);
+  border-radius: 50%;
+  background: var(--sun-color);
+  box-shadow: 0 0 0.6em rgba(245, 166, 35, 0.7);
+  transform: translateY(-50%);
+  transition: left 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--eclipse .theme-switch__moon-disc {
+  position: absolute;
+  top: 50%;
+  right: 0.2em;
+  width: var(--disc-size);
+  height: var(--disc-size);
+  border-radius: 50%;
+  background: var(--moon-color);
+  box-shadow: inset 0.15em -0.15em 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-50%);
+  transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.theme-switch--eclipse
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background: var(--track-bg-dark);
+}
+
+.theme-switch--eclipse
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__sun-disc {
+  left: calc(50% - var(--disc-size) / 2);
+}
+
+.theme-switch--eclipse
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__moon-disc {
+  right: calc(50% - var(--disc-size) / 2);
+}
+
+.theme-switch--eclipse
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__corona {
+  opacity: 1;
+}

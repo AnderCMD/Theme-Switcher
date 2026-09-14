@@ -11,4 +11,4 @@ npx vite .
 
 Or copy the relevant snippet from [`../README.md`](../README.md) into your own project, pointing imports at `theme-switcher-ts` instead of relative `src` paths.
 
-- [`vanilla/index.html`](./vanilla/index.html) — all 10 built-in variants rendered side by side, sharing one `ThemeController`.
+- [`vanilla/index.html`](./vanilla/index.html) — all 30 built-in variants rendered side by side, sharing one `ThemeController`.

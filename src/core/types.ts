@@ -11,7 +11,7 @@ export type ResolvedTheme = 'light' | 'dark';
  */
 export type ThemePreference = ResolvedTheme | 'system';
 
-/** One of the 10 built-in visual designs shipped with this package. */
+/** One of the 30 built-in visual designs shipped with this package. */
 export type ThemeSwitchVariant =
   | 'classic-sky'
   | 'minimal-pill'
@@ -22,7 +22,27 @@ export type ThemeSwitchVariant =
   | 'gradient-orb'
   | 'icon-button'
   | 'terminal'
-  | 'line';
+  | 'line'
+  | 'rocker'
+  | 'eclipse'
+  | 'papercut'
+  | 'neon-tube'
+  | 'pixel'
+  | 'flip-card'
+  | 'droplet'
+  | 'brass-lever'
+  | 'origami'
+  | 'aurora'
+  | 'brutalist'
+  | 'candy'
+  | 'wood'
+  | 'holographic'
+  | 'matrix'
+  | 'lava'
+  | 'crystal'
+  | 'vinyl'
+  | 'constellation'
+  | 'sunrise';
 
 /** Snapshot of the controller's state, passed to listeners. */
 export interface ThemeState {

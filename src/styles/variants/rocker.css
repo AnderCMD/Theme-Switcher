@@ -1,0 +1,98 @@
+/**
+ * Rocker
+ * A physical wall light-switch rocker on a mounting plate.
+ */
+.theme-switch--rocker {
+  --plate-w: 3.2em;
+  --plate-h: 4.4em;
+  --plate-bg: #f2f0ec;
+  --plate-border: #cfcabd;
+  --rocker-off: #fafafa;
+  --rocker-on: #2b2f38;
+  --text-off: #6b6656;
+  --text-on: #f3cf62;
+  font-size: 12px;
+}
+
+.theme-switch--rocker .theme-switch__plate {
+  width: var(--plate-w);
+  height: var(--plate-h);
+  background: var(--plate-bg);
+  border: 1px solid var(--plate-border);
+  border-radius: 0.4em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.12);
+}
+
+.theme-switch--rocker .theme-switch__screw {
+  position: absolute;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, #9c9890 70%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch--rocker .theme-switch__screw--tl {
+  top: 0.3em;
+  left: 0.3em;
+}
+.theme-switch--rocker .theme-switch__screw--br {
+  bottom: 0.3em;
+  right: 0.3em;
+}
+
+.theme-switch--rocker .theme-switch__rocker {
+  width: 70%;
+  height: 80%;
+  background: var(--rocker-off);
+  border-radius: 0.25em;
+  box-shadow:
+    0 0.2em 0.3em rgba(0, 0, 0, 0.25),
+    inset 0 0.05em 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  transform-origin: center;
+}
+
+.theme-switch--rocker .theme-switch__rocker-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 1em;
+  color: var(--text-off);
+  transition: color 0.2s ease;
+}
+
+.theme-switch--rocker .theme-switch__rocker-label--on {
+  top: 0.35em;
+}
+.theme-switch--rocker .theme-switch__rocker-label--off {
+  bottom: 0.35em;
+}
+
+.theme-switch--rocker .theme-switch__checkbox:active + .theme-switch__visual .theme-switch__rocker {
+  transform: scale(0.96);
+}
+
+.theme-switch--rocker
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__rocker {
+  background: var(--rocker-on);
+  transform: rotateX(8deg);
+}
+
+.theme-switch--rocker
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__rocker-label--on {
+  color: var(--text-on);
+}

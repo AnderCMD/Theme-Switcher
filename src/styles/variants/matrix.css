@@ -1,0 +1,101 @@
+/**
+ * Matrix
+ * Falling green digits on a black track, straight out of a hacker terminal.
+ */
+.theme-switch--matrix {
+  --track-width: 4.4em;
+  --track-height: 2em;
+  --thumb-size: 1.5em;
+  --neon: #39ff14;
+  --dim: #123307;
+  font-family: ui-monospace, 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.theme-switch--matrix .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: #000;
+  border: 1px solid var(--dim);
+  border-radius: 0.3em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.theme-switch--matrix .theme-switch__rain {
+  position: absolute;
+  top: -1.2em;
+  font-size: 0.7em;
+  color: var(--dim);
+  animation: theme-switch-matrix-fall 2.4s linear infinite;
+}
+
+.theme-switch--matrix .theme-switch__rain--1 {
+  left: 15%;
+  animation-delay: 0s;
+}
+.theme-switch--matrix .theme-switch__rain--2 {
+  left: 38%;
+  animation-delay: 0.6s;
+}
+.theme-switch--matrix .theme-switch__rain--3 {
+  left: 62%;
+  animation-delay: 1.2s;
+}
+.theme-switch--matrix .theme-switch__rain--4 {
+  left: 84%;
+  animation-delay: 1.8s;
+}
+
+@keyframes theme-switch-matrix-fall {
+  0% {
+    top: -1.2em;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    top: 2.4em;
+    opacity: 0;
+  }
+}
+
+.theme-switch--matrix .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: calc(var(--track-height) - 0.4em);
+  background: var(--dim);
+  border-radius: 0.15em;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0.3em rgba(57, 255, 20, 0.2);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.theme-switch--matrix .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__track {
+  border-color: var(--neon);
+}
+
+.theme-switch--matrix .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__rain {
+  color: var(--neon);
+}
+
+.theme-switch--matrix .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__thumb {
+  background: var(--neon);
+  box-shadow: 0 0 0.6em rgba(57, 255, 20, 0.8);
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.6em));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch--matrix .theme-switch__rain {
+    animation: none;
+    opacity: 0;
+  }
+}

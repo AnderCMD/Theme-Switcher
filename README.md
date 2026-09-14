@@ -1,12 +1,12 @@
 # Theme Switcher
 
-A tiny, dependency-free dark/light theme switcher for the web. One core engine, zero framework lock-in, and **10 built-in animated toggle designs** — works with plain HTML/CSS, React, Vue, Angular, Astro, and Tailwind CSS out of the box.
+A tiny, dependency-free dark/light theme switcher for the web. One core engine, zero framework lock-in, and **30 built-in animated toggle designs** — works with plain HTML/CSS, React, Vue, Angular, Astro, and Tailwind CSS out of the box.
 
 [![CI](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/theme-switcher-ts.svg)](https://www.npmjs.com/package/theme-switcher-ts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-**[Live demo — see all 10 designs and try every framework snippet →](https://andercmd.github.io/Theme-Switcher/)**
+**[Live demo — see all 30 designs and try every framework snippet →](https://andercmd.github.io/Theme-Switcher/)**
 
 ## Why this exists
 
@@ -20,7 +20,7 @@ Most of my projects repeat the same dark/light toggle logic with small variation
 - 🅰️ **Angular** adapter — DI-based `provideThemeSwitcher()` + a signal-based `injectTheme()`.
 - 🚀 **Astro**, **Svelte**, **Solid**, and everything else — the vanilla adapter is plain DOM APIs, so it drops into any framework's lifecycle hook or a bare `<script>` tag.
 - 🍦 **Vanilla JS** helper — `mountThemeSwitch()` for plain HTML pages or anything without a framework.
-- 🎨 **10 built-in designs** — Classic Sky, Minimal Pill, macOS, Neumorphic, Glassmorphism, Retro LED, Gradient Orb, Icon Button, Terminal, and Line. Pick one, or write your own CSS against the same predictable class names.
+- 🎨 **30 built-in designs** — from a Classic Sky day/night scene to a steampunk Brass Lever, a spinning Vinyl record, and a Matrix code-rain track. Pick one, or write your own CSS against the same predictable class names.
 - 🌗 **`light` / `dark` / `system`** preferences, with automatic OS-level sync via `prefers-color-scheme`.
 - 💾 Persists to `localStorage` and **syncs across browser tabs**.
 - 🎯 **Tailwind CSS compatible** by default (toggles the `dark` class Tailwind's `darkMode: 'class'` strategy expects) — and works identically with **no Tailwind at all**, since every stylesheet is plain, framework-free CSS.
@@ -153,7 +153,7 @@ export class ThemeSwitchComponent {
 }
 ```
 
-Import `theme-switcher-ts/styles/base.css` and `.../styles/variants/classic-sky.css` globally (e.g. in `angular.json`'s `styles` array), same as any other framework. Swap `'classic-sky'` for any of the [10 variant ids](#the-10-built-in-designs) in both the template's modifier class and the `VARIANTS[...]` lookup.
+Import `theme-switcher-ts/styles/base.css` and `.../styles/variants/classic-sky.css` globally (e.g. in `angular.json`'s `styles` array), same as any other framework. Swap `'classic-sky'` for any of the [30 variant ids](#the-30-built-in-designs) in both the template's modifier class and the `VARIANTS[...]` lookup.
 
 ### Astro
 
@@ -232,22 +232,42 @@ export default {
 
 **Without Tailwind**, everything still works: every variant ships as plain, hand-written CSS with no utility-class dependency, so it's equally at home in a project with no CSS framework at all.
 
-## The 10 built-in designs
+## The 30 built-in designs
 
-| Variant id      | Name          | Description                                                     |
-| --------------- | ------------- | --------------------------------------------------------------- |
-| `classic-sky`   | Classic Sky   | Animated day/night sky with drifting clouds, stars, and a moon. |
-| `minimal-pill`  | Minimal Pill  | Clean rounded pill with a sliding thumb and cross-fading icons. |
-| `macos`         | macOS         | A faithful recreation of the macOS System Settings toggle.      |
-| `neumorphic`    | Neumorphic    | Soft-UI switch with inset/raised shadows.                       |
-| `glassmorphism` | Glassmorphism | Frosted-glass track with backdrop blur.                         |
-| `retro-led`     | Retro LED     | Chunky 8-bit switch with hard steps and neon LED labels.        |
-| `gradient-orb`  | Gradient Orb  | Dark track with a glowing gradient orb thumb.                   |
-| `icon-button`   | Icon Button   | A single circular button that rotates between sun and moon.     |
-| `terminal`      | Terminal      | Cyberpunk terminal look with neon green monospace text.         |
-| `line`          | Line          | Ultra-minimal single-line track with a gliding dot.             |
+| Variant id      | Name          | Description                                                      |
+| --------------- | ------------- | ---------------------------------------------------------------- |
+| `classic-sky`   | Classic Sky   | Animated day/night sky with drifting clouds, stars, and a moon.  |
+| `minimal-pill`  | Minimal Pill  | Clean rounded pill with a sliding thumb and cross-fading icons.  |
+| `macos`         | macOS         | A faithful recreation of the macOS System Settings toggle.       |
+| `neumorphic`    | Neumorphic    | Soft-UI switch with inset/raised shadows.                        |
+| `glassmorphism` | Glassmorphism | Frosted-glass track with backdrop blur.                          |
+| `retro-led`     | Retro LED     | Chunky 8-bit switch with hard steps and neon LED labels.         |
+| `gradient-orb`  | Gradient Orb  | Dark track with a glowing gradient orb thumb.                    |
+| `icon-button`   | Icon Button   | A single circular button that rotates between sun and moon.      |
+| `terminal`      | Terminal      | Cyberpunk terminal look with neon green monospace text.          |
+| `line`          | Line          | Ultra-minimal single-line track with a gliding dot.              |
+| `rocker`        | Rocker        | A physical wall light-switch rocker on a mounting plate.         |
+| `eclipse`       | Eclipse       | A sun and moon disc that slide into total eclipse.               |
+| `papercut`      | Papercut      | Layered paper-craft circles with soft drop shadows.              |
+| `neon-tube`     | Neon Tube     | A glowing glass-tube outline switch, like a neon sign.           |
+| `pixel`         | Pixel         | A crisp 8-bit sprite sun and moon on a blocky track.             |
+| `flip-card`     | Flip Card     | A two-sided card that flips between sun and moon faces.          |
+| `droplet`       | Droplet       | A soft liquid blob that stretches and squashes as it slides.     |
+| `brass-lever`   | Brass Lever   | A steampunk brass lever on a riveted plate with a ticking gear.  |
+| `origami`       | Origami       | Folded-paper triangles that rearrange sun into crescent moon.    |
+| `aurora`        | Aurora        | A shifting aurora-borealis gradient behind a frosted thumb.      |
+| `brutalist`     | Brutalist     | Raw neo-brutalist switch: thick borders, hard offset shadow.     |
+| `candy`         | Candy         | A glossy jelly-bean pill with a bright specular highlight.       |
+| `wood`          | Wood          | A varnished wooden switch plate with grain and brass screws.     |
+| `holographic`   | Holographic   | An iridescent foil-gradient switch that shifts hue as it slides. |
+| `matrix`        | Matrix        | Falling green digits on a black track, hacker-terminal style.    |
+| `lava`          | Lava          | Warm gradient blobs that merge and separate like a lava lamp.    |
+| `crystal`       | Crystal       | A faceted gemstone thumb that catches the light as it slides.    |
+| `vinyl`         | Vinyl         | A miniature spinning record that slows to a stop on toggle.      |
+| `constellation` | Constellation | Hand-drawn stars connect into constellation lines.               |
+| `sunrise`       | Sunrise       | A sun that rises and sets behind a horizon line.                 |
 
-Every variant is import-only — pick one stylesheet from `theme-switcher-ts/styles/variants/*.css`, plus the shared `base.css`. See [`examples/vanilla/index.html`](./examples/vanilla/index.html) for a page that renders all 10 side by side.
+Every variant is import-only — pick one stylesheet from `theme-switcher-ts/styles/variants/*.css`, plus the shared `base.css`. See [`examples/vanilla/index.html`](./examples/vanilla/index.html) for a page that renders all 30 side by side.
 
 ### Writing your own design
 

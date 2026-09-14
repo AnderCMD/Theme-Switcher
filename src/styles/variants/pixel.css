@@ -1,0 +1,81 @@
+/**
+ * Pixel
+ * A crisp 8-bit sprite sun and moon on a blocky arcade-cabinet track.
+ */
+.theme-switch--pixel {
+  --track-width: 4.2em;
+  --track-height: 2em;
+  --thumb-size: 1.6em;
+  --bg-off: #cfe8f7;
+  --bg-on: #10131f;
+  --sun-color: #f5a623;
+  --moon-color: #d9def0;
+  font-size: 12px;
+}
+
+.theme-switch--pixel .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--bg-off);
+  border: 0.15em solid #000;
+  border-radius: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  image-rendering: pixelated;
+  transition: background-color 0.1s steps(2);
+}
+
+.theme-switch--pixel .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: #fff;
+  border: 0.1em solid #000;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.15s steps(4);
+}
+
+.theme-switch--pixel .theme-switch__icon {
+  position: absolute;
+  width: 1.1em;
+  height: 1.1em;
+  shape-rendering: crispEdges;
+  transition: opacity 0.1s steps(2);
+}
+
+.theme-switch--pixel .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+}
+
+.theme-switch--pixel .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+}
+
+.theme-switch--pixel .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__track {
+  background: var(--bg-on);
+}
+
+.theme-switch--pixel .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+}
+
+.theme-switch--pixel
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+}
+
+.theme-switch--pixel
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+}

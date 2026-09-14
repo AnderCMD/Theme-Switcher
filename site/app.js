@@ -56,6 +56,106 @@ const VARIANTS = [
     name: 'Line',
     description: 'Ultra-minimal single-line track with a small dot gliding between sun and moon.',
   },
+  {
+    id: 'rocker',
+    name: 'Rocker',
+    description: 'A physical wall light-switch rocker, complete with a mounting plate and screws.',
+  },
+  {
+    id: 'eclipse',
+    name: 'Eclipse',
+    description: 'A sun and moon disc that slide into total eclipse as the theme changes.',
+  },
+  {
+    id: 'papercut',
+    name: 'Papercut',
+    description: 'Layered paper-craft circles with soft drop shadows, like a die-cut card.',
+  },
+  {
+    id: 'neon-tube',
+    name: 'Neon Tube',
+    description: 'A glowing glass-tube outline switch that flickers on with a soft neon hum.',
+  },
+  {
+    id: 'pixel',
+    name: 'Pixel',
+    description: 'A crisp 8-bit sprite sun and moon on a blocky arcade-cabinet track.',
+  },
+  {
+    id: 'flip-card',
+    name: 'Flip Card',
+    description: 'A two-sided card that flips end over end between its sun and moon faces.',
+  },
+  {
+    id: 'droplet',
+    name: 'Droplet',
+    description: 'A soft liquid blob that stretches and squashes as it slides across the track.',
+  },
+  {
+    id: 'brass-lever',
+    name: 'Brass Lever',
+    description: 'A steampunk brass lever on a riveted plate, with a small ticking gear.',
+  },
+  {
+    id: 'origami',
+    name: 'Origami',
+    description: 'Folded-paper triangles that rearrange from a sun shape into a crescent moon.',
+  },
+  {
+    id: 'aurora',
+    name: 'Aurora',
+    description: 'A shifting aurora-borealis gradient track behind a frosted sliding thumb.',
+  },
+  {
+    id: 'brutalist',
+    name: 'Brutalist',
+    description: 'Raw neo-brutalist switch: thick black borders, hard offset shadow, no curves.',
+  },
+  {
+    id: 'candy',
+    name: 'Candy',
+    description: 'A glossy jelly-bean pill with a bright specular highlight, like hard candy.',
+  },
+  {
+    id: 'wood',
+    name: 'Wood',
+    description: 'A varnished wooden switch plate with visible grain and brass screws.',
+  },
+  {
+    id: 'holographic',
+    name: 'Holographic',
+    description: 'An iridescent foil-gradient switch that shifts hue as it slides.',
+  },
+  {
+    id: 'matrix',
+    name: 'Matrix',
+    description: 'Falling green digits on a black track, straight out of a hacker terminal.',
+  },
+  {
+    id: 'lava',
+    name: 'Lava',
+    description: 'Warm gradient blobs that merge and separate like a slow-motion lava lamp.',
+  },
+  {
+    id: 'crystal',
+    name: 'Crystal',
+    description: 'A faceted gemstone thumb that catches the light as it slides across the track.',
+  },
+  {
+    id: 'vinyl',
+    name: 'Vinyl',
+    description: 'A miniature spinning record that slows to a stop when you change the theme.',
+  },
+  {
+    id: 'constellation',
+    name: 'Constellation',
+    description: 'Hand-drawn stars connect into constellation lines behind a sliding thumb.',
+  },
+  {
+    id: 'sunrise',
+    name: 'Sunrise',
+    description: 'A sun that rises and sets behind a horizon line as the track fills with color.',
+  },
 ];
 
 // One shared controller drives every switch on the page, including the

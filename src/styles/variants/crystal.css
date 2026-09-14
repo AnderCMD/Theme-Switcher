@@ -1,0 +1,52 @@
+/**
+ * Crystal
+ * A faceted gemstone thumb that catches the light as it slides.
+ */
+.theme-switch--crystal {
+  --track-width: 4.2em;
+  --track-height: 2.1em;
+  --thumb-size: 1.7em;
+  --track-bg: #e4e9f7;
+  --track-bg-dark: #131629;
+  --gem-light: #7ad1ff;
+  --gem-dark: #a48cff;
+  font-size: 12px;
+}
+
+.theme-switch--crystal .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--track-bg);
+  border-radius: 0.4em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  transition: background-color 0.35s ease;
+}
+
+.theme-switch--crystal .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: linear-gradient(145deg, #fff, var(--gem-light) 60%, #4a9fd6);
+  clip-path: polygon(50% 0%, 90% 25%, 100% 65%, 50% 100%, 0% 65%, 10% 25%);
+  box-shadow: 0 0.15em 0.4em rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.35s ease;
+}
+
+.theme-switch--crystal
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background: var(--track-bg-dark);
+}
+
+.theme-switch--crystal
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  background: linear-gradient(145deg, #fff, var(--gem-dark) 60%, #5c3fd6);
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.4em)) rotate(90deg);
+}

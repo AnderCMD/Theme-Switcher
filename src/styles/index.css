@@ -1,5 +1,5 @@
 /**
- * Convenience bundle that imports the shared base styles plus all 10
+ * Convenience bundle that imports the shared base styles plus all 30
  * built-in variants. Prefer importing only `base.css` + the single variant
  * you use in production to keep your CSS bundle small; this file is meant
  * for demos, docs sites, and quick prototyping.
@@ -15,3 +15,23 @@
 @import './variants/icon-button.css';
 @import './variants/terminal.css';
 @import './variants/line.css';
+@import './variants/rocker.css';
+@import './variants/eclipse.css';
+@import './variants/papercut.css';
+@import './variants/neon-tube.css';
+@import './variants/pixel.css';
+@import './variants/flip-card.css';
+@import './variants/droplet.css';
+@import './variants/brass-lever.css';
+@import './variants/origami.css';
+@import './variants/aurora.css';
+@import './variants/brutalist.css';
+@import './variants/candy.css';
+@import './variants/wood.css';
+@import './variants/holographic.css';
+@import './variants/matrix.css';
+@import './variants/lava.css';
+@import './variants/crystal.css';
+@import './variants/vinyl.css';
+@import './variants/constellation.css';
+@import './variants/sunrise.css';

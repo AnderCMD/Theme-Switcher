@@ -1,0 +1,81 @@
+/**
+ * Candy
+ * A glossy jelly-bean pill with a bright specular highlight.
+ */
+.theme-switch--candy {
+  --track-width: 4em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  --track-light: linear-gradient(180deg, #ff9ecb, #ff5fa2);
+  --track-dark: linear-gradient(180deg, #7c6ff2, #4b3bb0);
+  --sun-color: #ffd166;
+  --moon-color: #e8e6ff;
+  font-size: 12px;
+}
+
+.theme-switch--candy .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--track-light);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  box-shadow:
+    inset 0 -0.2em 0.3em rgba(0, 0, 0, 0.15),
+    inset 0 0.15em 0.2em rgba(255, 255, 255, 0.6);
+  transition: background 0.35s ease;
+}
+
+.theme-switch--candy .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #fff, #ffe9f4 40%, #ffcfe6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-switch--candy .theme-switch__icon {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition: opacity 0.2s ease;
+}
+
+.theme-switch--candy .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+}
+
+.theme-switch--candy .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+}
+
+.theme-switch--candy .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__track {
+  background: var(--track-dark);
+}
+
+.theme-switch--candy .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+}
+
+.theme-switch--candy
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+}
+
+.theme-switch--candy
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+}

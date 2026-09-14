@@ -1,0 +1,92 @@
+/**
+ * Papercut
+ * Layered paper-craft circles with soft drop shadows, like a die-cut card.
+ */
+.theme-switch--papercut {
+  --track-width: 3.8em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  --paper: #fffdf7;
+  --paper-shadow: #e7e0cf;
+  --sun-color: #e8944c;
+  --moon-color: #6b6a8a;
+  font-size: 12px;
+}
+
+.theme-switch--papercut .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--paper-shadow);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.25em;
+}
+
+.theme-switch--papercut .theme-switch__layer {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--paper);
+}
+
+.theme-switch--papercut .theme-switch__layer--back {
+  inset: 0.05em;
+  box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.08);
+}
+
+.theme-switch--papercut .theme-switch__layer--mid {
+  inset: 0.12em;
+  box-shadow: 0 0.1em 0.15em rgba(0, 0, 0, 0.08);
+}
+
+.theme-switch--papercut .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0.2em 0.35em rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--papercut .theme-switch__icon {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition: opacity 0.2s ease;
+}
+
+.theme-switch--papercut .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+}
+
+.theme-switch--papercut .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+}
+
+.theme-switch--papercut
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+}
+
+.theme-switch--papercut
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+}
+
+.theme-switch--papercut
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+}

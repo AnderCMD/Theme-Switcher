@@ -1,0 +1,103 @@
+/**
+ * Brass Lever
+ * A steampunk brass lever on a riveted plate, with a small ticking gear.
+ */
+.theme-switch--brass-lever {
+  --plate-w: 3.6em;
+  --plate-h: 2.6em;
+  --plate-bg: #3b2f26;
+  --brass: #c8963e;
+  --brass-light: #e8c27a;
+  font-size: 12px;
+}
+
+.theme-switch--brass-lever .theme-switch__plate {
+  width: var(--plate-w);
+  height: var(--plate-h);
+  background: linear-gradient(180deg, #4a3b2e, #2c2119);
+  border-radius: 0.3em;
+  position: relative;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0.15em 0.3em rgba(0, 0, 0, 0.4);
+}
+
+.theme-switch--brass-lever .theme-switch__rivet {
+  position: absolute;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--brass-light), var(--brass) 70%);
+}
+
+.theme-switch--brass-lever .theme-switch__rivet--tl {
+  top: 0.25em;
+  left: 0.25em;
+}
+.theme-switch--brass-lever .theme-switch__rivet--tr {
+  top: 0.25em;
+  right: 0.25em;
+}
+.theme-switch--brass-lever .theme-switch__rivet--bl {
+  bottom: 0.25em;
+  left: 0.25em;
+}
+.theme-switch--brass-lever .theme-switch__rivet--br {
+  bottom: 0.25em;
+  right: 0.25em;
+}
+
+.theme-switch--brass-lever .theme-switch__gear {
+  position: absolute;
+  top: 0.4em;
+  right: 0.6em;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow:
+    0 -0.35em 0 -0.2em var(--brass),
+    0 0.35em 0 -0.2em var(--brass),
+    -0.35em 0 0 -0.2em var(--brass),
+    0.35em 0 0 -0.2em var(--brass);
+  transition: transform 0.4s ease;
+}
+
+.theme-switch--brass-lever .theme-switch__slot {
+  position: absolute;
+  bottom: 0.35em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.35em;
+  height: 1.5em;
+  background: #1a1310;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.8);
+}
+
+.theme-switch--brass-lever .theme-switch__lever {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0.55em;
+  height: 0.95em;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--brass-light), var(--brass));
+  border-radius: 999px 999px 0.15em 0.15em;
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.5);
+  transition: bottom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-switch--brass-lever
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__lever {
+  bottom: 0.6em;
+}
+
+.theme-switch--brass-lever
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__gear {
+  transform: rotate(45deg);
+}

@@ -20,17 +20,62 @@ export interface VariantDefinition {
   markup: string;
 }
 
-const SUN_MOON_ICONS = `
+const SUN_ICON = `
   <svg class="theme-switch__icon theme-switch__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <circle cx="12" cy="12" r="5" fill="currentColor" />
     <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
     </g>
   </svg>
+`;
+
+const MOON_ICON = `
   <svg class="theme-switch__icon theme-switch__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path
       d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
       fill="currentColor"
+    />
+  </svg>
+`;
+
+const SUN_MOON_ICONS = `${SUN_ICON}${MOON_ICON}`;
+
+const PIXEL_SUN = `
+  <svg class="theme-switch__icon theme-switch__icon--sun" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">
+    <rect x="3" y="0" width="2" height="1" fill="currentColor" />
+    <rect x="3" y="7" width="2" height="1" fill="currentColor" />
+    <rect x="0" y="3" width="1" height="2" fill="currentColor" />
+    <rect x="7" y="3" width="1" height="2" fill="currentColor" />
+    <rect x="2" y="2" width="4" height="4" fill="currentColor" />
+  </svg>
+`;
+
+const PIXEL_MOON = `
+  <svg class="theme-switch__icon theme-switch__icon--moon" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">
+    <rect x="3" y="1" width="3" height="1" fill="currentColor" />
+    <rect x="2" y="2" width="4" height="1" fill="currentColor" />
+    <rect x="2" y="3" width="4" height="2" fill="currentColor" />
+    <rect x="2" y="5" width="4" height="1" fill="currentColor" />
+    <rect x="3" y="6" width="3" height="1" fill="currentColor" />
+  </svg>
+`;
+
+const STAR_DOTS = `
+  <svg class="theme-switch__stars" viewBox="0 0 60 24" fill="none" aria-hidden="true">
+    <g class="theme-switch__star-dots" fill="currentColor">
+      <circle cx="6" cy="7" r="1.3" />
+      <circle cx="16" cy="15" r="1.1" />
+      <circle cx="26" cy="6" r="1.4" />
+      <circle cx="35" cy="16" r="1" />
+      <circle cx="45" cy="8" r="1.3" />
+      <circle cx="54" cy="14" r="1.1" />
+    </g>
+    <path
+      class="theme-switch__constellation-lines"
+      d="M6 7 16 15 26 6 35 16 45 8 54 14"
+      stroke="currentColor"
+      stroke-width="0.6"
+      stroke-linecap="round"
     />
   </svg>
 `;
@@ -174,6 +219,267 @@ export const VARIANTS: Record<ThemeSwitchVariant, VariantDefinition> = {
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor" />
         </svg>
         <div class="theme-switch__dot"></div>
+      </div>
+    `,
+  },
+  rocker: {
+    id: 'rocker',
+    name: 'Rocker',
+    description: 'A physical wall light-switch rocker, complete with a mounting plate and screws.',
+    cssFile: 'rocker.css',
+    markup: `
+      <div class="theme-switch__plate">
+        <span class="theme-switch__screw theme-switch__screw--tl"></span>
+        <span class="theme-switch__screw theme-switch__screw--br"></span>
+        <div class="theme-switch__rocker">
+          <span class="theme-switch__rocker-label theme-switch__rocker-label--on">I</span>
+          <span class="theme-switch__rocker-label theme-switch__rocker-label--off">O</span>
+        </div>
+      </div>
+    `,
+  },
+  eclipse: {
+    id: 'eclipse',
+    name: 'Eclipse',
+    description: 'A sun and moon disc that slide into total eclipse as the theme changes.',
+    cssFile: 'eclipse.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__corona"></div>
+        <div class="theme-switch__sun-disc"></div>
+        <div class="theme-switch__moon-disc"></div>
+      </div>
+    `,
+  },
+  papercut: {
+    id: 'papercut',
+    name: 'Papercut',
+    description: 'Layered paper-craft circles with soft drop shadows, like a die-cut card.',
+    cssFile: 'papercut.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__layer theme-switch__layer--back"></div>
+        <div class="theme-switch__layer theme-switch__layer--mid"></div>
+        <div class="theme-switch__thumb">${SUN_MOON_ICONS}</div>
+      </div>
+    `,
+  },
+  'neon-tube': {
+    id: 'neon-tube',
+    name: 'Neon Tube',
+    description: 'A glowing glass-tube outline switch that flickers on with a soft neon hum.',
+    cssFile: 'neon-tube.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  pixel: {
+    id: 'pixel',
+    name: 'Pixel',
+    description: 'A crisp 8-bit sprite sun and moon on a blocky arcade-cabinet track.',
+    cssFile: 'pixel.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb">${PIXEL_SUN}${PIXEL_MOON}</div>
+      </div>
+    `,
+  },
+  'flip-card': {
+    id: 'flip-card',
+    name: 'Flip Card',
+    description: 'A two-sided card that flips end over end between its sun and moon faces.',
+    cssFile: 'flip-card.css',
+    markup: `
+      <div class="theme-switch__scene">
+        <div class="theme-switch__card">
+          <div class="theme-switch__face theme-switch__face--front">${SUN_ICON}</div>
+          <div class="theme-switch__face theme-switch__face--back">${MOON_ICON}</div>
+        </div>
+      </div>
+    `,
+  },
+  droplet: {
+    id: 'droplet',
+    name: 'Droplet',
+    description: 'A soft liquid blob that stretches and squashes as it slides across the track.',
+    cssFile: 'droplet.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  'brass-lever': {
+    id: 'brass-lever',
+    name: 'Brass Lever',
+    description: 'A steampunk brass lever on a riveted plate, with a small ticking gear.',
+    cssFile: 'brass-lever.css',
+    markup: `
+      <div class="theme-switch__plate">
+        <span class="theme-switch__rivet theme-switch__rivet--tl"></span>
+        <span class="theme-switch__rivet theme-switch__rivet--tr"></span>
+        <span class="theme-switch__rivet theme-switch__rivet--bl"></span>
+        <span class="theme-switch__rivet theme-switch__rivet--br"></span>
+        <div class="theme-switch__gear"></div>
+        <div class="theme-switch__slot">
+          <div class="theme-switch__lever"></div>
+        </div>
+      </div>
+    `,
+  },
+  origami: {
+    id: 'origami',
+    name: 'Origami',
+    description: 'Folded-paper triangles that rearrange from a sun shape into a crescent moon.',
+    cssFile: 'origami.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__fold theme-switch__fold--1"></div>
+        <div class="theme-switch__fold theme-switch__fold--2"></div>
+        <div class="theme-switch__fold theme-switch__fold--3"></div>
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  aurora: {
+    id: 'aurora',
+    name: 'Aurora',
+    description: 'A shifting aurora-borealis gradient track behind a frosted sliding thumb.',
+    cssFile: 'aurora.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb">${SUN_MOON_ICONS}</div>
+      </div>
+    `,
+  },
+  brutalist: {
+    id: 'brutalist',
+    name: 'Brutalist',
+    description: 'Raw neo-brutalist switch: thick black borders, hard offset shadow, no curves.',
+    cssFile: 'brutalist.css',
+    markup: `
+      <div class="theme-switch__track">
+        <span class="theme-switch__label theme-switch__label--on">ON</span>
+        <span class="theme-switch__label theme-switch__label--off">OFF</span>
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  candy: {
+    id: 'candy',
+    name: 'Candy',
+    description: 'A glossy jelly-bean pill with a bright specular highlight, like hard candy.',
+    cssFile: 'candy.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb">${SUN_MOON_ICONS}</div>
+      </div>
+    `,
+  },
+  wood: {
+    id: 'wood',
+    name: 'Wood',
+    description: 'A varnished wooden switch plate with visible grain and brass screws.',
+    cssFile: 'wood.css',
+    markup: `
+      <div class="theme-switch__panel">
+        <span class="theme-switch__screw theme-switch__screw--tl"></span>
+        <span class="theme-switch__screw theme-switch__screw--tr"></span>
+        <span class="theme-switch__screw theme-switch__screw--bl"></span>
+        <span class="theme-switch__screw theme-switch__screw--br"></span>
+        <div class="theme-switch__track">
+          <div class="theme-switch__knob"></div>
+        </div>
+      </div>
+    `,
+  },
+  holographic: {
+    id: 'holographic',
+    name: 'Holographic',
+    description: 'An iridescent foil-gradient switch that shifts hue as it slides.',
+    cssFile: 'holographic.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  matrix: {
+    id: 'matrix',
+    name: 'Matrix',
+    description: 'Falling green digits on a black track, straight out of a hacker terminal.',
+    cssFile: 'matrix.css',
+    markup: `
+      <div class="theme-switch__track">
+        <span class="theme-switch__rain theme-switch__rain--1">1</span>
+        <span class="theme-switch__rain theme-switch__rain--2">0</span>
+        <span class="theme-switch__rain theme-switch__rain--3">1</span>
+        <span class="theme-switch__rain theme-switch__rain--4">0</span>
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  lava: {
+    id: 'lava',
+    name: 'Lava',
+    description: 'Warm gradient blobs that merge and separate like a slow-motion lava lamp.',
+    cssFile: 'lava.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__blob theme-switch__blob--1"></div>
+        <div class="theme-switch__blob theme-switch__blob--2"></div>
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  crystal: {
+    id: 'crystal',
+    name: 'Crystal',
+    description: 'A faceted gemstone thumb that catches the light as it slides across the track.',
+    cssFile: 'crystal.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__thumb"></div>
+      </div>
+    `,
+  },
+  vinyl: {
+    id: 'vinyl',
+    name: 'Vinyl',
+    description: 'A miniature spinning record that slows to a stop when you change the theme.',
+    cssFile: 'vinyl.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__disc">
+          <div class="theme-switch__label-center"></div>
+        </div>
+      </div>
+    `,
+  },
+  constellation: {
+    id: 'constellation',
+    name: 'Constellation',
+    description: 'Hand-drawn stars connect into constellation lines behind a sliding thumb.',
+    cssFile: 'constellation.css',
+    markup: `
+      <div class="theme-switch__track">
+        ${STAR_DOTS}
+        <div class="theme-switch__thumb">${SUN_MOON_ICONS}</div>
+      </div>
+    `,
+  },
+  sunrise: {
+    id: 'sunrise',
+    name: 'Sunrise',
+    description: 'A sun that rises and sets behind a horizon line as the track fills with color.',
+    cssFile: 'sunrise.css',
+    markup: `
+      <div class="theme-switch__track">
+        <div class="theme-switch__sky"></div>
+        <div class="theme-switch__horizon"></div>
+        <div class="theme-switch__thumb"></div>
       </div>
     `,
   },

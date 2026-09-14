@@ -1,0 +1,96 @@
+/**
+ * Lava
+ * Warm gradient blobs that merge and separate like a slow-motion lava lamp.
+ */
+.theme-switch--lava {
+  --track-width: 4.2em;
+  --track-height: 2.2em;
+  --thumb-size: 1.5em;
+  font-size: 12px;
+}
+
+.theme-switch--lava .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: #1a1030;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  filter: contrast(22);
+}
+
+.theme-switch--lava .theme-switch__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: #ff7a45;
+  filter: blur(0.35em);
+  transition:
+    transform 2.4s ease-in-out,
+    background-color 0.4s ease;
+}
+
+.theme-switch--lava .theme-switch__blob--1 {
+  width: 1.1em;
+  height: 1.1em;
+  top: 20%;
+  left: 15%;
+  animation: theme-switch-lava-drift-1 5s ease-in-out infinite;
+}
+
+.theme-switch--lava .theme-switch__blob--2 {
+  width: 0.9em;
+  height: 0.9em;
+  bottom: 15%;
+  left: 35%;
+  animation: theme-switch-lava-drift-2 4s ease-in-out infinite;
+}
+
+@keyframes theme-switch-lava-drift-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0.6em, 0.3em);
+  }
+}
+
+@keyframes theme-switch-lava-drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-0.4em, -0.4em);
+  }
+}
+
+.theme-switch--lava .theme-switch__thumb {
+  position: absolute;
+  top: 50%;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  left: 0.35em;
+  border-radius: 50%;
+  background: #ffb27a;
+  filter: blur(0.35em);
+  transform: translateY(-50%);
+  transition:
+    left 0.45s ease,
+    background-color 0.4s ease;
+}
+
+.theme-switch--lava .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__blob {
+  background: #7c6ff2;
+}
+
+.theme-switch--lava .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__thumb {
+  left: calc(100% - var(--thumb-size) - 0.35em);
+  background: #b7aeff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch--lava .theme-switch__blob {
+    animation: none;
+  }
+}

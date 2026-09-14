@@ -1,0 +1,81 @@
+/**
+ * Brutalist
+ * Raw neo-brutalist switch: thick black borders, hard offset shadow, no curves.
+ */
+.theme-switch--brutalist {
+  --track-width: 5em;
+  --track-height: 2.2em;
+  --thumb-size: 1.6em;
+  --bg-off: #fff2a8;
+  --bg-on: #a8b4ff;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+}
+
+.theme-switch--brutalist .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--bg-off);
+  border: 0.15em solid #000;
+  border-radius: 0;
+  box-shadow: 0.2em 0.2em 0 #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  transition: background-color 0.1s linear;
+}
+
+.theme-switch--brutalist .theme-switch__label {
+  position: absolute;
+  font-weight: 800;
+  font-size: 0.75em;
+  letter-spacing: 0.03em;
+}
+
+.theme-switch--brutalist .theme-switch__label--on {
+  left: 0.5em;
+  opacity: 0;
+}
+.theme-switch--brutalist .theme-switch__label--off {
+  right: 0.4em;
+  opacity: 1;
+}
+
+.theme-switch--brutalist .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: #fff;
+  border: 0.12em solid #000;
+  border-radius: 0;
+  transition: transform 0.15s linear;
+  position: relative;
+  z-index: 1;
+}
+
+.theme-switch--brutalist
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background: var(--bg-on);
+}
+
+.theme-switch--brutalist
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.6em));
+}
+
+.theme-switch--brutalist
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__label--on {
+  opacity: 1;
+}
+.theme-switch--brutalist
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__label--off {
+  opacity: 0;
+}

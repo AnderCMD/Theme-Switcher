@@ -1,0 +1,103 @@
+/**
+ * Origami
+ * Folded-paper triangles that rearrange as the theme changes.
+ */
+.theme-switch--origami {
+  --track-width: 4em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  --paper: #fef6e4;
+  --paper-shade: #f3d9a3;
+  --paper-dark: #2c2a4a;
+  --paper-dark-shade: #423f6e;
+  font-size: 12px;
+}
+
+.theme-switch--origami .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background: var(--paper);
+  border-radius: 0.3em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  overflow: hidden;
+  transition: background-color 0.35s ease;
+}
+
+.theme-switch--origami .theme-switch__fold {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition: border-color 0.35s ease;
+}
+
+.theme-switch--origami .theme-switch__fold--1 {
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 1.2em 1.2em 0 0;
+  border-color: var(--paper-shade) transparent transparent transparent;
+}
+
+.theme-switch--origami .theme-switch__fold--2 {
+  bottom: 0;
+  right: 1.6em;
+  border-style: solid;
+  border-width: 0 0 1em 1em;
+  border-color: transparent transparent var(--paper-shade) transparent;
+}
+
+.theme-switch--origami .theme-switch__fold--3 {
+  top: 0.2em;
+  right: 0.4em;
+  border-style: solid;
+  border-width: 0 0.8em 0.8em 0;
+  border-color: transparent var(--paper-shade) transparent transparent;
+}
+
+.theme-switch--origami .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: var(--paper);
+  border-radius: 0.25em;
+  transform: rotate(45deg);
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.theme-switch--origami
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background: var(--paper-dark);
+}
+
+.theme-switch--origami .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__fold {
+  border-color: var(--paper-dark-shade) transparent transparent transparent;
+}
+.theme-switch--origami
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__fold--2 {
+  border-color: transparent transparent var(--paper-dark-shade) transparent;
+}
+.theme-switch--origami
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__fold--3 {
+  border-color: transparent var(--paper-dark-shade) transparent transparent;
+}
+
+.theme-switch--origami
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  background: var(--paper-dark-shade);
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em)) rotate(225deg);
+}

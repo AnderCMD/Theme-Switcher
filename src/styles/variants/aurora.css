@@ -1,0 +1,93 @@
+/**
+ * Aurora
+ * A shifting aurora-borealis gradient track behind a frosted sliding thumb.
+ */
+.theme-switch--aurora {
+  --track-width: 4em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  --sun-color: #ffd166;
+  --moon-color: #c9d6ff;
+  font-size: 12px;
+}
+
+.theme-switch--aurora .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  background: linear-gradient(120deg, #2de1c2, #7c6ff2, #ff6fb0, #2de1c2);
+  background-size: 300% 300%;
+  animation: theme-switch-aurora-shift 6s ease infinite;
+}
+
+@keyframes theme-switch-aurora-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.theme-switch--aurora .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(0.3em);
+  backdrop-filter: blur(0.3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--aurora .theme-switch__icon {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition: opacity 0.2s ease;
+}
+
+.theme-switch--aurora .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+}
+
+.theme-switch--aurora .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+}
+
+.theme-switch--aurora .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+}
+
+.theme-switch--aurora
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+}
+
+.theme-switch--aurora
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch--aurora .theme-switch__track {
+    animation: none;
+  }
+}

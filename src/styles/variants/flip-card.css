@@ -1,0 +1,58 @@
+/**
+ * Flip Card
+ * A two-sided card that flips end over end between its sun and moon faces.
+ */
+.theme-switch--flip-card {
+  --size: 2.2em;
+  --front-bg: #f5a623;
+  --back-bg: #2b2f38;
+  font-size: 12px;
+}
+
+.theme-switch--flip-card .theme-switch__scene {
+  width: var(--size);
+  height: var(--size);
+  perspective: 12em;
+}
+
+.theme-switch--flip-card .theme-switch__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5em;
+}
+
+.theme-switch--flip-card .theme-switch__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5em;
+  backface-visibility: hidden;
+  box-shadow: 0 0.15em 0.4em rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.theme-switch--flip-card .theme-switch__face--front {
+  background: var(--front-bg);
+}
+
+.theme-switch--flip-card .theme-switch__face--back {
+  background: var(--back-bg);
+  transform: rotateY(180deg);
+}
+
+.theme-switch--flip-card .theme-switch__icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.theme-switch--flip-card
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__card {
+  transform: rotateY(180deg);
+}

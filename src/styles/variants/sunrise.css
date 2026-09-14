@@ -1,0 +1,77 @@
+/**
+ * Sunrise
+ * A sun that rises and sets behind a horizon line as the track fills with color.
+ */
+.theme-switch--sunrise {
+  --track-width: 4.4em;
+  --track-height: 2.2em;
+  --thumb-size: 1.4em;
+  --sky-day: linear-gradient(180deg, #ffd27a 0%, #ff9a6b 100%);
+  --sky-night: linear-gradient(180deg, #1b1f3b 0%, #0a0c1c 100%);
+  --ground: #6b4a2f;
+  --ground-night: #10121e;
+  font-size: 12px;
+}
+
+.theme-switch--sunrise .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  border-radius: 0.4em;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-switch--sunrise .theme-switch__sky {
+  position: absolute;
+  inset: 0;
+  background: var(--sky-day);
+  transition: background 0.5s ease;
+}
+
+.theme-switch--sunrise .theme-switch__horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  background: var(--ground);
+  transition: background-color 0.5s ease;
+}
+
+.theme-switch--sunrise .theme-switch__thumb {
+  position: absolute;
+  bottom: 0.35em;
+  left: 50%;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: #fff2b0;
+  box-shadow: 0 0 0.5em rgba(255, 220, 130, 0.8);
+  transform: translateX(-50%);
+  transition:
+    bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    left 0.4s ease;
+}
+
+.theme-switch--sunrise .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__sky {
+  background: var(--sky-night);
+}
+
+.theme-switch--sunrise
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__horizon {
+  background: var(--ground-night);
+}
+
+.theme-switch--sunrise
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  bottom: calc(100% - var(--thumb-size) - 0.3em);
+  left: 25%;
+  background: #d9def0;
+  box-shadow: 0 0 0.5em rgba(180, 190, 230, 0.6);
+}
