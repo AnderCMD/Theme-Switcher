@@ -71,8 +71,8 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "cross-env NODE_OPTIONS=--localstorage-file=.vitest-localstorage.json vitest run",
-    "test:watch": "cross-env NODE_OPTIONS=--localstorage-file=.vitest-localstorage.json vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
@@ -93,7 +93,6 @@
     "@types/react": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "jsdom": "^24.1.0",
