@@ -8,6 +8,8 @@ A tiny, dependency-free dark/light theme switcher for the web. One core engine, 
 
 **[Live demo — see all 30 designs and try every framework snippet →](https://andercmd.github.io/Theme-Switcher/)**
 
+**Package NPM** [Theme-Switcher-TS](https://www.npmjs.com/package/theme-switcher-ts)
+
 ## Why this exists
 
 Most of my projects repeat the same dark/light toggle logic with small variations: persist to `localStorage`, respect `prefers-color-scheme`, sync across tabs, flip a `dark` class on `<html>`. This package extracts that logic once, tests it, and ships it as a framework-agnostic core plus thin adapters for React, Vue, and Angular — so every new project gets a solid, accessible toggle in one import instead of a copy-pasted component, whatever framework that project happens to use.
