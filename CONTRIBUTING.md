@@ -51,6 +51,25 @@ We loosely follow [Conventional Commits](https://www.conventionalcommits.org/) (
 - Run `npm run lint`, `npm run typecheck`, and `npm test` before opening the PR — CI runs the same checks.
 - Describe _why_ the change is needed, not just what changed.
 
+## Releasing (maintainers)
+
+Publishing to npm goes through [`.github/workflows/publish.yml`](./.github/workflows/publish.yml) using npm's **Trusted Publishing (OIDC)** — GitHub Actions authenticates directly with the npm registry via a short-lived OIDC token, so there's no `NPM_TOKEN` secret to rotate and no interactive 2FA prompt to get stuck on mid-publish.
+
+This requires a one-time setup on npm's side (already done for `theme-switcher-ts`, kept here for reference / in case it's ever reconfigured): on the package's **Settings → Trusted Publisher** page, add a GitHub Actions publisher with
+
+- **Organization or user:** `AnderCMD`
+- **Repository:** `Theme-Switcher`
+- **Workflow filename:** `publish.yml`
+- **Allow `npm publish`:** checked (not just the staged/provenance-only flow)
+
+To cut a release:
+
+1. Bump `version` in `package.json` (and add an entry to `CHANGELOG.md`) on `main`.
+2. Publish a [GitHub Release](https://github.com/AnderCMD/Theme-Switcher/releases/new) with tag `v<version>` (e.g. `v1.2.0`) matching `package.json` exactly — the workflow verifies this and fails the run if they disagree.
+3. The workflow lints, typechecks, tests, builds, and runs `npm publish --access public --provenance` automatically.
+
+For a one-off publish without cutting a release, trigger the workflow manually from the _Actions_ tab (`workflow_dispatch`), typing `publish` into the confirmation input.
+
 ## Reporting bugs / requesting features
 
 Please use the issue templates under `.github/ISSUE_TEMPLATE`. Include a minimal reproduction when reporting a bug — a CodeSandbox/StackBlitz link or a short code snippet is ideal.
