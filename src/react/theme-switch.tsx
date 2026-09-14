@@ -16,8 +16,8 @@ export interface ThemeSwitchProps extends React.LabelHTMLAttributes<HTMLLabelEle
  * required on your end. Import the matching stylesheet once (globally):
  *
  * ```tsx
- * import '@andercmd/theme-switcher/styles/classic-sky.css';
- * import { ThemeSwitch } from '@andercmd/theme-switcher/react';
+ * import 'theme-switcher-ts/styles/classic-sky.css';
+ * import { ThemeSwitch } from 'theme-switcher-ts/react';
  *
  * <ThemeSwitch variant="classic-sky" />
  * ```

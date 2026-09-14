@@ -21,7 +21,7 @@ export interface UseThemeResult {
  * @example
  * ```vue
  * <script setup>
- * import { useTheme } from '@andercmd/theme-switcher/vue';
+ * import { useTheme } from 'theme-switcher-ts/vue';
  * const { state, toggleTheme } = useTheme();
  * </script>
  * <template>

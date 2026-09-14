@@ -11,7 +11,7 @@
  *
  * @example tailwind.config.js
  * ```js
- * import { themeSwitcherPreset } from '@andercmd/theme-switcher/tailwind';
+ * import { themeSwitcherPreset } from 'theme-switcher-ts/tailwind';
  *
  * export default {
  *   presets: [themeSwitcherPreset],

@@ -3,7 +3,7 @@
 A tiny, dependency-free dark/light theme switcher for the web. One core engine, zero framework lock-in, and **10 built-in animated toggle designs** — works with plain HTML/CSS, React, Vue, Angular, Astro, and Tailwind CSS out of the box.
 
 [![CI](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/%40andercmd%2Ftheme-switcher.svg)](https://www.npmjs.com/package/@andercmd/theme-switcher)
+[![npm version](https://img.shields.io/npm/v/theme-switcher-ts.svg)](https://www.npmjs.com/package/theme-switcher-ts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 **[Live demo — see all 10 designs and try every framework snippet →](https://andercmd.github.io/Theme-Switcher/)**
@@ -30,15 +30,15 @@ Most of my projects repeat the same dark/light toggle logic with small variation
 ## Installation
 
 ```bash
-npm install @andercmd/theme-switcher
+npm install theme-switcher-ts
 ```
 
 ```bash
-pnpm add @andercmd/theme-switcher
+pnpm add theme-switcher-ts
 ```
 
 ```bash
-yarn add @andercmd/theme-switcher
+yarn add theme-switcher-ts
 ```
 
 React, Vue, and `@angular/core` are optional [peer dependencies](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependencies) — install whichever one your project already uses; the core and vanilla adapter (the ones Astro, Svelte, Solid, etc. use) need none of them.
@@ -49,13 +49,10 @@ React, Vue, and `@angular/core` are optional [peer dependencies](https://docs.np
 
 ```html
 <div id="theme-switch"></div>
-<link rel="stylesheet" href="node_modules/@andercmd/theme-switcher/dist/styles/base.css" />
-<link
-  rel="stylesheet"
-  href="node_modules/@andercmd/theme-switcher/dist/styles/variants/classic-sky.css"
-/>
+<link rel="stylesheet" href="node_modules/theme-switcher-ts/dist/styles/base.css" />
+<link rel="stylesheet" href="node_modules/theme-switcher-ts/dist/styles/variants/classic-sky.css" />
 <script type="module">
-  import { mountThemeSwitch } from '@andercmd/theme-switcher/vanilla';
+  import { mountThemeSwitch } from 'theme-switcher-ts/vanilla';
 
   mountThemeSwitch(document.getElementById('theme-switch'), {
     variant: 'classic-sky',
@@ -66,9 +63,9 @@ React, Vue, and `@angular/core` are optional [peer dependencies](https://docs.np
 ### React
 
 ```tsx
-import '@andercmd/theme-switcher/styles/base.css';
-import '@andercmd/theme-switcher/styles/variants/classic-sky.css';
-import { ThemeSwitch } from '@andercmd/theme-switcher/react';
+import 'theme-switcher-ts/styles/base.css';
+import 'theme-switcher-ts/styles/variants/classic-sky.css';
+import { ThemeSwitch } from 'theme-switcher-ts/react';
 
 export function Header() {
   return (
@@ -82,7 +79,7 @@ export function Header() {
 Need the raw state instead of the pre-built component?
 
 ```tsx
-import { useTheme } from '@andercmd/theme-switcher/react';
+import { useTheme } from 'theme-switcher-ts/react';
 
 function CustomToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -94,9 +91,9 @@ function CustomToggle() {
 
 ```vue
 <script setup>
-import '@andercmd/theme-switcher/styles/base.css';
-import '@andercmd/theme-switcher/styles/variants/classic-sky.css';
-import { ThemeSwitch } from '@andercmd/theme-switcher/vue';
+import 'theme-switcher-ts/styles/base.css';
+import 'theme-switcher-ts/styles/variants/classic-sky.css';
+import { ThemeSwitch } from 'theme-switcher-ts/vue';
 </script>
 
 <template>
@@ -106,7 +103,7 @@ import { ThemeSwitch } from '@andercmd/theme-switcher/vue';
 
 ```vue
 <script setup>
-import { useTheme } from '@andercmd/theme-switcher/vue';
+import { useTheme } from 'theme-switcher-ts/vue';
 const { state, toggleTheme } = useTheme();
 </script>
 
@@ -117,12 +114,12 @@ const { state, toggleTheme } = useTheme();
 
 ### Angular
 
-This package ships **no** `@Component`/`@Directive` classes — an Angular library built from plain `tsc`/`tsup` output (rather than `ng-packagr`'s Ivy partial compiler) can't safely ship decorated components, since Angular's decorators need to go through Angular's own compiler to produce working Ivy instructions. Instead, `@andercmd/theme-switcher/angular` gives you a proper DI-based `ThemeController` (an `InjectionToken` + `provideThemeSwitcher()` + a functional `injectTheme()` using signals) and the same static variant markup used internally, so you can drop it straight into a **standalone component you own** — no ng-packagr, no version lock-in to a specific Angular major:
+This package ships **no** `@Component`/`@Directive` classes — an Angular library built from plain `tsc`/`tsup` output (rather than `ng-packagr`'s Ivy partial compiler) can't safely ship decorated components, since Angular's decorators need to go through Angular's own compiler to produce working Ivy instructions. Instead, `theme-switcher-ts/angular` gives you a proper DI-based `ThemeController` (an `InjectionToken` + `provideThemeSwitcher()` + a functional `injectTheme()` using signals) and the same static variant markup used internally, so you can drop it straight into a **standalone component you own** — no ng-packagr, no version lock-in to a specific Angular major:
 
 ```ts
 // app.config.ts
 import { ApplicationConfig } from '@angular/core';
-import { provideThemeSwitcher } from '@andercmd/theme-switcher/angular';
+import { provideThemeSwitcher } from 'theme-switcher-ts/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideThemeSwitcher({ defaultPreference: 'system' })],
@@ -132,7 +129,7 @@ export const appConfig: ApplicationConfig = {
 ```ts
 // theme-switch.component.ts
 import { Component } from '@angular/core';
-import { injectTheme, VARIANTS } from '@andercmd/theme-switcher/angular';
+import { injectTheme, VARIANTS } from 'theme-switcher-ts/angular';
 
 @Component({
   selector: 'app-theme-switch',
@@ -156,7 +153,7 @@ export class ThemeSwitchComponent {
 }
 ```
 
-Import `@andercmd/theme-switcher/styles/base.css` and `.../styles/variants/classic-sky.css` globally (e.g. in `angular.json`'s `styles` array), same as any other framework. Swap `'classic-sky'` for any of the [10 variant ids](#the-10-built-in-designs) in both the template's modifier class and the `VARIANTS[...]` lookup.
+Import `theme-switcher-ts/styles/base.css` and `.../styles/variants/classic-sky.css` globally (e.g. in `angular.json`'s `styles` array), same as any other framework. Swap `'classic-sky'` for any of the [10 variant ids](#the-10-built-in-designs) in both the template's modifier class and the `VARIANTS[...]` lookup.
 
 ### Astro
 
@@ -168,11 +165,11 @@ Astro components render to static HTML by default, so the simplest integration i
 ---
 <div id="theme-switch"></div>
 
-<link rel="stylesheet" href="@andercmd/theme-switcher/styles/base.css" />
-<link rel="stylesheet" href="@andercmd/theme-switcher/styles/variants/classic-sky.css" />
+<link rel="stylesheet" href="theme-switcher-ts/styles/base.css" />
+<link rel="stylesheet" href="theme-switcher-ts/styles/variants/classic-sky.css" />
 
 <script>
-  import { mountThemeSwitch } from '@andercmd/theme-switcher/vanilla';
+  import { mountThemeSwitch } from 'theme-switcher-ts/vanilla';
   mountThemeSwitch(document.getElementById('theme-switch')!, { variant: 'classic-sky' });
 </script>
 ```
@@ -180,7 +177,7 @@ Astro components render to static HTML by default, so the simplest integration i
 Already using Astro's React or Vue integration elsewhere in the same project? Use the framework component directly with a client directive instead:
 
 ```astro
-import { ThemeSwitch } from '@andercmd/theme-switcher/react';
+import { ThemeSwitch } from 'theme-switcher-ts/react';
 <ThemeSwitch client:load variant="classic-sky" />
 ```
 
@@ -189,7 +186,7 @@ import { ThemeSwitch } from '@andercmd/theme-switcher/react';
 The [vanilla adapter](#vanilla-andercmdtheme-switchervanilla) has zero framework dependencies — it's plain DOM APIs — so it works unmodified in Svelte's `onMount`, SolidJS's `onMount`, a `<script>` on an htmx page, or literally any environment that runs JavaScript in a browser:
 
 ```ts
-import { mountThemeSwitch } from '@andercmd/theme-switcher/vanilla';
+import { mountThemeSwitch } from 'theme-switcher-ts/vanilla';
 
 // Svelte: call inside onMount(() => { ... })
 // Solid: call inside onMount(() => { ... })
@@ -200,7 +197,7 @@ mountThemeSwitch(document.getElementById('theme-switch')!, { variant: 'classic-s
 ### Just the engine (any framework, or none)
 
 ```ts
-import { ThemeController } from '@andercmd/theme-switcher';
+import { ThemeController } from 'theme-switcher-ts';
 
 const controller = new ThemeController({ defaultPreference: 'system' });
 
@@ -226,7 +223,7 @@ export default {
 Then use `dark:` variants anywhere in your app as usual. If you'd rather not hand-write `darkMode: 'class'`, a one-line preset is included:
 
 ```js
-import { themeSwitcherPreset } from '@andercmd/theme-switcher/tailwind';
+import { themeSwitcherPreset } from 'theme-switcher-ts/tailwind';
 
 export default {
   presets: [themeSwitcherPreset],
@@ -250,7 +247,7 @@ export default {
 | `terminal`      | Terminal      | Cyberpunk terminal look with neon green monospace text.         |
 | `line`          | Line          | Ultra-minimal single-line track with a gliding dot.             |
 
-Every variant is import-only — pick one stylesheet from `@andercmd/theme-switcher/styles/variants/*.css`, plus the shared `base.css`. See [`examples/vanilla/index.html`](./examples/vanilla/index.html) for a page that renders all 10 side by side.
+Every variant is import-only — pick one stylesheet from `theme-switcher-ts/styles/variants/*.css`, plus the shared `base.css`. See [`examples/vanilla/index.html`](./examples/vanilla/index.html) for a page that renders all 10 side by side.
 
 ### Writing your own design
 
@@ -290,25 +287,25 @@ new ThemeController(options?: ThemeControllerOptions)
 
 Methods: `getPreference()`, `getResolvedTheme()`, `getState()`, `setPreference()`, `setDark()`, `setLight()`, `useSystemPreference()`, `toggle()`, `subscribe(listener)`, `destroy()`.
 
-### React (`@andercmd/theme-switcher/react`)
+### React (`theme-switcher-ts/react`)
 
 - `useTheme(options?)` → `{ theme, preference, setTheme, toggleTheme, controller }`
 - `<ThemeProvider {...options}>` — share one controller across the tree.
 - `<ThemeSwitch variant?, ariaLabel? />` — ready-made toggle.
 
-### Vue (`@andercmd/theme-switcher/vue`)
+### Vue (`theme-switcher-ts/vue`)
 
 - `useTheme(options?)` → `{ state, setTheme, toggleTheme, controller }` (reactive `state`)
 - `<ThemeProvider>` / `provideTheme(options?)` — share one controller.
 - `<ThemeSwitch variant?, aria-label? />` — ready-made toggle.
 
-### Angular (`@andercmd/theme-switcher/angular`)
+### Angular (`theme-switcher-ts/angular`)
 
 - `provideThemeSwitcher(options?)` → `EnvironmentProviders` for `ApplicationConfig.providers`.
 - `THEME_CONTROLLER` — `InjectionToken<ThemeController>`, in case you'd rather call `inject()` yourself.
 - `injectTheme()` → `{ theme, preference, setTheme, toggleTheme, controller }` (signal-based; must be called from an injection context).
 
-### Vanilla (`@andercmd/theme-switcher/vanilla`)
+### Vanilla (`theme-switcher-ts/vanilla`)
 
 - `mountThemeSwitch(container, options?)` → `{ element, input, controller, destroy }`
 

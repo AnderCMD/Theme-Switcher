@@ -36,8 +36,8 @@ let autoId = 0;
  *
  * @example
  * ```ts
- * import { mountThemeSwitch } from '@andercmd/theme-switcher/vanilla';
- * import '@andercmd/theme-switcher/styles/classic-sky.css';
+ * import { mountThemeSwitch } from 'theme-switcher-ts/vanilla';
+ * import 'theme-switcher-ts/styles/classic-sky.css';
  *
  * mountThemeSwitch(document.getElementById('theme-switch')!);
  * ```

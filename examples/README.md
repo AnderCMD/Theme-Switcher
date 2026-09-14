@@ -9,6 +9,6 @@ npx vite .
 # then open http://localhost:5173/examples/vanilla/
 ```
 
-Or copy the relevant snippet from [`../README.md`](../README.md) into your own project, pointing imports at `@andercmd/theme-switcher` instead of relative `src` paths.
+Or copy the relevant snippet from [`../README.md`](../README.md) into your own project, pointing imports at `theme-switcher-ts` instead of relative `src` paths.
 
 - [`vanilla/index.html`](./vanilla/index.html) — all 10 built-in variants rendered side by side, sharing one `ThemeController`.

@@ -17,7 +17,7 @@ What you expected to happen.
 
 **Environment**
 
-- `@andercmd/theme-switcher` version:
+- `theme-switcher-ts` version:
 - Framework (React / Vue / vanilla) and version:
 - Browser(s):
 - Tailwind CSS? (yes/no, version):

@@ -34,7 +34,7 @@ export const THEME_CONTROLLER = new InjectionToken<ThemeController>('THEME_CONTR
  * @example
  * ```ts
  * // app.config.ts
- * import { provideThemeSwitcher } from '@andercmd/theme-switcher/angular';
+ * import { provideThemeSwitcher } from 'theme-switcher-ts/angular';
  *
  * export const appConfig: ApplicationConfig = {
  *   providers: [provideThemeSwitcher({ defaultPreference: 'system' })],

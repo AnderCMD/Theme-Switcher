@@ -118,11 +118,11 @@ const snippets = [
     label: 'Vanilla / HTML',
     file: 'index.html',
     code: `&lt;div id="theme-switch"&gt;&lt;/div&gt;
-&lt;link rel="stylesheet" href="node_modules/@andercmd/theme-switcher/dist/styles/base.css" /&gt;
-&lt;link rel="stylesheet" href="node_modules/@andercmd/theme-switcher/dist/styles/variants/classic-sky.css" /&gt;
+&lt;link rel="stylesheet" href="node_modules/theme-switcher-ts/dist/styles/base.css" /&gt;
+&lt;link rel="stylesheet" href="node_modules/theme-switcher-ts/dist/styles/variants/classic-sky.css" /&gt;
 
 &lt;script type="module"&gt;
-  <span class="kw">import</span> { mountThemeSwitch } <span class="kw">from</span> <span class="str">'@andercmd/theme-switcher/vanilla'</span>;
+  <span class="kw">import</span> { mountThemeSwitch } <span class="kw">from</span> <span class="str">'theme-switcher-ts/vanilla'</span>;
 
   mountThemeSwitch(document.getElementById(<span class="str">'theme-switch'</span>), {
     variant: <span class="str">'classic-sky'</span>,
@@ -133,9 +133,9 @@ const snippets = [
     id: 'react',
     label: 'React',
     file: 'Header.tsx',
-    code: `<span class="kw">import</span> <span class="str">'@andercmd/theme-switcher/styles/base.css'</span>;
-<span class="kw">import</span> <span class="str">'@andercmd/theme-switcher/styles/variants/classic-sky.css'</span>;
-<span class="kw">import</span> { ThemeSwitch } <span class="kw">from</span> <span class="str">'@andercmd/theme-switcher/react'</span>;
+    code: `<span class="kw">import</span> <span class="str">'theme-switcher-ts/styles/base.css'</span>;
+<span class="kw">import</span> <span class="str">'theme-switcher-ts/styles/variants/classic-sky.css'</span>;
+<span class="kw">import</span> { ThemeSwitch } <span class="kw">from</span> <span class="str">'theme-switcher-ts/react'</span>;
 
 <span class="kw">export function</span> Header() {
   <span class="kw">return</span> &lt;ThemeSwitch variant=<span class="str">"classic-sky"</span> /&gt;;
@@ -146,9 +146,9 @@ const snippets = [
     label: 'Vue 3',
     file: 'Header.vue',
     code: `&lt;script setup&gt;
-<span class="kw">import</span> <span class="str">'@andercmd/theme-switcher/styles/base.css'</span>;
-<span class="kw">import</span> <span class="str">'@andercmd/theme-switcher/styles/variants/classic-sky.css'</span>;
-<span class="kw">import</span> { ThemeSwitch } <span class="kw">from</span> <span class="str">'@andercmd/theme-switcher/vue'</span>;
+<span class="kw">import</span> <span class="str">'theme-switcher-ts/styles/base.css'</span>;
+<span class="kw">import</span> <span class="str">'theme-switcher-ts/styles/variants/classic-sky.css'</span>;
+<span class="kw">import</span> { ThemeSwitch } <span class="kw">from</span> <span class="str">'theme-switcher-ts/vue'</span>;
 &lt;/script&gt;
 
 &lt;template&gt;
@@ -160,7 +160,7 @@ const snippets = [
     label: 'Angular',
     file: 'theme-switch.component.ts',
     code: `<span class="kw">import</span> { Component } <span class="kw">from</span> <span class="str">'@angular/core'</span>;
-<span class="kw">import</span> { injectTheme, VARIANTS } <span class="kw">from</span> <span class="str">'@andercmd/theme-switcher/angular'</span>;
+<span class="kw">import</span> { injectTheme, VARIANTS } <span class="kw">from</span> <span class="str">'theme-switcher-ts/angular'</span>;
 
 <span class="cm">@Component</span>({
   selector: <span class="str">'app-theme-switch'</span>,
@@ -186,11 +186,11 @@ const snippets = [
     code: `---
 ---
 &lt;div id="theme-switch"&gt;&lt;/div&gt;
-&lt;link rel="stylesheet" href="@andercmd/theme-switcher/styles/base.css" /&gt;
-&lt;link rel="stylesheet" href="@andercmd/theme-switcher/styles/variants/classic-sky.css" /&gt;
+&lt;link rel="stylesheet" href="theme-switcher-ts/styles/base.css" /&gt;
+&lt;link rel="stylesheet" href="theme-switcher-ts/styles/variants/classic-sky.css" /&gt;
 
 &lt;script&gt;
-  <span class="kw">import</span> { mountThemeSwitch } <span class="kw">from</span> <span class="str">'@andercmd/theme-switcher/vanilla'</span>;
+  <span class="kw">import</span> { mountThemeSwitch } <span class="kw">from</span> <span class="str">'theme-switcher-ts/vanilla'</span>;
   mountThemeSwitch(document.getElementById(<span class="str">'theme-switch'</span>)!, { variant: <span class="str">'classic-sky'</span> });
 &lt;/script&gt;`,
   },

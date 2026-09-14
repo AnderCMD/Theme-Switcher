@@ -11,8 +11,8 @@ let autoId = 0;
  *
  * ```vue
  * <script setup>
- * import '@andercmd/theme-switcher/styles/classic-sky.css';
- * import { ThemeSwitch } from '@andercmd/theme-switcher/vue';
+ * import 'theme-switcher-ts/styles/classic-sky.css';
+ * import { ThemeSwitch } from 'theme-switcher-ts/vue';
  * </script>
  * <template>
  *   <ThemeSwitch variant="classic-sky" />
