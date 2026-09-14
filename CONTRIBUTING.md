@@ -42,6 +42,7 @@ We loosely follow [Conventional Commits](https://www.conventionalcommits.org/) (
 3. Add a stylesheet at `src/styles/variants/<id>.css`, scoped under `.theme-switch--<id>` and following the `.theme-switch__checkbox:checked + .theme-switch__visual ...` pattern used by the existing variants.
 4. Add it to `src/styles/index.css`.
 5. Add a small entry to the variants table in `README.md` and to `examples/vanilla/index.html`.
+6. Add it to the `VARIANTS` array in [`site/app.js`](./site/app.js) so it shows up on the [docs site](https://andercmd.github.io/Theme-Switcher/) — that file keeps its own copy of the id/name/description rather than importing from `src/`, since the site only ever consumes the built package.
 
 ## Pull requests
 

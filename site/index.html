@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher — 10 dark/light toggle designs for any framework</title>
+    <meta
+      name="description"
+      content="A tiny, framework-agnostic dark/light theme switcher with 10 built-in animated toggle designs. Works with plain HTML/CSS, React, Vue, Angular, Astro, and Tailwind CSS."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./site.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="topnav">
+        <span class="brand">theme-switcher</span>
+        <span class="topnav-links">
+          <a href="https://github.com/AnderCMD/Theme-Switcher" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.npmjs.com/package/@andercmd/theme-switcher"
+            target="_blank"
+            rel="noopener"
+            >npm</a
+          >
+        </span>
+      </nav>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">@andercmd/theme-switcher</p>
+          <h1>Ten switches, one engine.</h1>
+          <p>
+            This page uses the library for its own dark mode — the toggle on the right (the "Classic
+            Sky" design) controls the theme of <em>the whole page</em>, exactly the way it would in
+            your app. Every switch below runs the actual published package, sharing one
+            <code>ThemeController</code>.
+          </p>
+          <div class="hero-install">
+            <code id="install-cmd">npm install @andercmd/theme-switcher</code>
+            <button type="button" id="copy-install" aria-label="Copy install command">Copy</button>
+          </div>
+        </div>
+        <div class="hero-toggle">
+          <div id="hero-switch"></div>
+          <span class="hero-toggle-label">Click to toggle</span>
+        </div>
+      </header>
+
+      <section class="gallery">
+        <div class="section-heading">
+          <h2>The 10 built-in designs</h2>
+          <span class="hint">All share one engine — click any of them</span>
+        </div>
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <section class="usage">
+        <div class="section-heading">
+          <h2>Using it in your framework</h2>
+          <span class="hint">Same variant id (<code>classic-sky</code>) in every example</span>
+        </div>
+        <div class="code-panel">
+          <div class="tabs" role="tablist"></div>
+          <div class="panels"></div>
+        </div>
+      </section>
+
+      <section class="tailwind-note">
+        <div class="section-heading">
+          <h2>With or without Tailwind</h2>
+        </div>
+        <p>
+          <code>ThemeController</code> toggles a <code>dark</code> class on
+          <code>&lt;html&gt;</code> by default — exactly what Tailwind's
+          <code>darkMode: 'class'</code> strategy expects, so <code>dark:</code> variants work
+          anywhere in your app with zero extra setup. Every stylesheet on this page is plain,
+          hand-written CSS with no utility-class dependency, so it works identically in a project
+          with no CSS framework at all.
+        </p>
+      </section>
+
+      <footer>
+        <span>MIT © Ander CMD</span>
+        <span class="links">
+          <a href="https://github.com/AnderCMD/Theme-Switcher" target="_blank" rel="noopener"
+            >Source</a
+          >
+          <a href="https://github.com/AnderCMD/Theme-Switcher#readme" target="_blank" rel="noopener"
+            >Documentation</a
+          >
+          <a href="https://github.com/AnderCMD/Theme-Switcher/issues" target="_blank" rel="noopener"
+            >Issues</a
+          >
+        </span>
+      </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
