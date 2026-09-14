@@ -1,0 +1,25 @@
+# Only `dist`, `README.md`, and `LICENSE` are published (see package.json "files"),
+# but keep this as a belt-and-suspenders guard against accidental publishes.
+src/
+scripts/
+test/
+examples/
+.github/
+.vscode/
+.idea/
+*.config.ts
+*.config.js
+*.config.mjs
+.eslintrc.cjs
+.prettierrc.json
+.prettierignore
+.editorconfig
+tsconfig.json
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+CHANGELOG.md
+*.test.ts
+*.test.tsx
+coverage/
+.DS_Store

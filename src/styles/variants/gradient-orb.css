@@ -1,0 +1,46 @@
+/**
+ * Gradient Orb
+ * Dark track with a glowing gradient orb thumb that shifts hue on toggle.
+ */
+.theme-switch--gradient-orb {
+  --track-width: 4em;
+  --track-height: 2.1em;
+  --thumb-size: 1.7em;
+  --track-bg: #10121a;
+  --orb-light: radial-gradient(circle at 30% 30%, #ffe9a8, #f5a623 60%, #d9700c);
+  --orb-dark: radial-gradient(circle at 30% 30%, #c9d6ff, #7c6ff2 60%, #4b2e83);
+  font-size: 12px;
+}
+
+.theme-switch--gradient-orb .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background-color: var(--track-bg);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.6);
+}
+
+.theme-switch--gradient-orb .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--orb-light);
+  box-shadow: 0 0 0.9em 0.1em rgba(245, 166, 35, 0.7);
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.theme-switch--gradient-orb
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  background: var(--orb-dark);
+  box-shadow: 0 0 0.9em 0.1em rgba(124, 111, 242, 0.8);
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.4em));
+}

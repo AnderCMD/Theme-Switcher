@@ -1,0 +1,91 @@
+/**
+ * Minimal Pill
+ * Clean rounded pill track with a sliding thumb and cross-fading icons.
+ */
+.theme-switch--minimal-pill {
+  --track-width: 3.5em;
+  --track-height: 2em;
+  --thumb-size: 1.6em;
+  --track-bg-light: #e4e7ec;
+  --track-bg-dark: #2b2f38;
+  --thumb-bg: #ffffff;
+  --sun-color: #f5a623;
+  --moon-color: #cbd2e0;
+  font-size: 12px;
+}
+
+.theme-switch--minimal-pill .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  background-color: var(--track-bg-light);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+  transition: background-color 0.3s ease;
+}
+
+.theme-switch--minimal-pill .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--thumb-bg);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--minimal-pill .theme-switch__icon {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
+}
+
+.theme-switch--minimal-pill .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-switch--minimal-pill .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.theme-switch--minimal-pill
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background-color: var(--track-bg-dark);
+}
+
+.theme-switch--minimal-pill
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.4em));
+}
+
+.theme-switch--minimal-pill
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.theme-switch--minimal-pill
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}

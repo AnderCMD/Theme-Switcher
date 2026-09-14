@@ -1,0 +1,58 @@
+/**
+ * Shared base styles for every theme-switcher variant. Import this once
+ * alongside whichever variant stylesheet(s) you use.
+ */
+
+/* Applied briefly by ThemeController while it flips the theme, so color
+   transitions elsewhere on the page don't visibly "catch up" one by one. */
+.theme-switcher-no-transition,
+.theme-switcher-no-transition * {
+  transition: none !important;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch,
+.theme-switch *,
+.theme-switch *::before,
+.theme-switch *::after {
+  box-sizing: border-box;
+}
+
+.theme-switch__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The wrapper wrapping each variant's decorative markup is kept out of the
+   box/layout tree so it doesn't add an extra box between the checkbox and
+   the variant's own root element, while remaining a valid CSS sibling
+   target for `.theme-switch__checkbox:checked + .theme-switch__visual`. */
+.theme-switch__visual {
+  display: contents;
+}
+
+.theme-switch__checkbox:focus-visible + .theme-switch__visual :first-child {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch,
+  .theme-switch * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

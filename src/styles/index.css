@@ -1,0 +1,17 @@
+/**
+ * Convenience bundle that imports the shared base styles plus all 10
+ * built-in variants. Prefer importing only `base.css` + the single variant
+ * you use in production to keep your CSS bundle small; this file is meant
+ * for demos, docs sites, and quick prototyping.
+ */
+@import './base.css';
+@import './variants/classic-sky.css';
+@import './variants/minimal-pill.css';
+@import './variants/macos.css';
+@import './variants/neumorphic.css';
+@import './variants/glassmorphism.css';
+@import './variants/retro-led.css';
+@import './variants/gradient-orb.css';
+@import './variants/icon-button.css';
+@import './variants/terminal.css';
+@import './variants/line.css';

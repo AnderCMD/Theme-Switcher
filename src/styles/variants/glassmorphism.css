@@ -1,0 +1,90 @@
+/**
+ * Glassmorphism
+ * Frosted-glass track with backdrop blur and a glowing translucent thumb.
+ */
+.theme-switch--glassmorphism {
+  --track-width: 3.8em;
+  --track-height: 2.1em;
+  --thumb-size: 1.6em;
+  --sun-color: #ffd166;
+  --moon-color: #a5b4fc;
+  font-size: 12px;
+}
+
+.theme-switch--glassmorphism .theme-switch__track {
+  width: var(--track-width);
+  height: var(--track-height);
+  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.25em;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(0.5em);
+  backdrop-filter: blur(0.5em);
+  box-shadow: 0 0.25em 0.6em rgba(31, 38, 135, 0.2);
+  transition: background 0.3s ease;
+}
+
+.theme-switch--glassmorphism .theme-switch__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0.6em rgba(255, 209, 102, 0.5);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
+}
+
+.theme-switch--glassmorphism .theme-switch__icon {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition: opacity 0.2s ease;
+}
+
+.theme-switch--glassmorphism .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+}
+
+.theme-switch--glassmorphism .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+}
+
+.theme-switch--glassmorphism
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__track {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(30, 27, 75, 0.2));
+}
+
+.theme-switch--glassmorphism
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__thumb {
+  transform: translateX(calc(var(--track-width) - var(--thumb-size) - 0.5em));
+  box-shadow: 0 0 0.6em rgba(165, 180, 252, 0.6);
+}
+
+.theme-switch--glassmorphism
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+}
+
+.theme-switch--glassmorphism
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+}

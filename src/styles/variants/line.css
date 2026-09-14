@@ -1,0 +1,83 @@
+/**
+ * Line
+ * Ultra-minimal single-line track with a small dot gliding between a sun
+ * and moon end-icon.
+ */
+.theme-switch--line {
+  --track-width: 4.5em;
+  --dot-size: 0.9em;
+  --line-color-light: #d1d5db;
+  --line-color-dark: #4b5563;
+  --dot-color: #111827;
+  --sun-color: #f5a623;
+  --moon-color: #94a3b8;
+  font-size: 12px;
+}
+
+.theme-switch--line .theme-switch__track {
+  width: var(--track-width);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  position: relative;
+}
+
+.theme-switch--line .theme-switch__end-icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.theme-switch--line .theme-switch__end-icon--sun {
+  color: var(--sun-color);
+}
+
+.theme-switch--line .theme-switch__end-icon--moon {
+  color: var(--moon-color);
+  opacity: 0.5;
+}
+
+.theme-switch--line .theme-switch__line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--line-color-light);
+  border-radius: 999px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.theme-switch--line .theme-switch__dot {
+  position: absolute;
+  top: 50%;
+  left: 1.4em;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background-color: var(--dot-color);
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0, -50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch--line .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__line {
+  background-color: var(--line-color-dark);
+}
+
+.theme-switch--line .theme-switch__checkbox:checked + .theme-switch__visual .theme-switch__dot {
+  transform: translate(calc(var(--track-width) - 2.8em), -50%);
+}
+
+.theme-switch--line
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__end-icon--sun {
+  opacity: 0.5;
+}
+
+.theme-switch--line
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__end-icon--moon {
+  opacity: 1;
+}

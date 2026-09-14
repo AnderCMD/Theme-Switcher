@@ -1,0 +1,78 @@
+/**
+ * Terminal
+ * Cyberpunk terminal look: neon green monospace brackets on black.
+ * The bracketed word always names the *currently active* theme.
+ */
+.theme-switch--terminal {
+  --bg: #05070a;
+  --neon: #39ff14;
+  --dim: #1f6e10;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+.theme-switch--terminal .theme-switch__track {
+  background-color: var(--bg);
+  border: 1px solid var(--neon);
+  border-radius: 0.2em;
+  padding: 0.4em 0.6em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+  box-shadow: 0 0 0.5em rgba(57, 255, 20, 0.35);
+}
+
+.theme-switch--terminal .theme-switch__bracket {
+  color: var(--neon);
+  font-weight: 700;
+}
+
+.theme-switch--terminal .theme-switch__text {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  display: none;
+  transition: color 0.2s ease;
+}
+
+.theme-switch--terminal .theme-switch__text--light {
+  display: inline;
+  color: var(--neon);
+  text-shadow: 0 0 0.4em var(--neon);
+}
+
+.theme-switch--terminal .theme-switch__cursor {
+  width: 0.5em;
+  height: 1em;
+  background-color: var(--neon);
+  margin-left: 0.2em;
+  animation: theme-switch-terminal-blink 1s steps(1) infinite;
+}
+
+@keyframes theme-switch-terminal-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* When dark mode is active, swap which word is lit up. */
+.theme-switch--terminal
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__text--light {
+  display: none;
+}
+
+.theme-switch--terminal
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__text--dark {
+  display: inline;
+  color: var(--neon);
+  text-shadow: 0 0 0.4em var(--neon);
+}

@@ -1,0 +1,79 @@
+/**
+ * Icon Button
+ * A single circular button that rotates and swaps between sun and moon.
+ */
+.theme-switch--icon-button {
+  --size: 2.6em;
+  --bg-light: #fff7e0;
+  --bg-dark: #1e2130;
+  --sun-color: #f5a623;
+  --moon-color: #c4c9d1;
+  font-size: 12px;
+}
+
+.theme-switch--icon-button .theme-switch__button {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.15);
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
+}
+
+.theme-switch--icon-button
+  .theme-switch__checkbox:active
+  + .theme-switch__visual
+  .theme-switch__button {
+  transform: scale(0.9);
+}
+
+.theme-switch--icon-button .theme-switch__icon {
+  position: absolute;
+  width: 1.3em;
+  height: 1.3em;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+}
+
+.theme-switch--icon-button .theme-switch__icon--sun {
+  color: var(--sun-color);
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-switch--icon-button .theme-switch__icon--moon {
+  color: var(--moon-color);
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.theme-switch--icon-button
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__button {
+  background-color: var(--bg-dark);
+}
+
+.theme-switch--icon-button
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.theme-switch--icon-button
+  .theme-switch__checkbox:checked
+  + .theme-switch__visual
+  .theme-switch__icon--moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
