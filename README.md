@@ -4,7 +4,7 @@ A tiny, dependency-free dark/light theme switcher for the web. One core engine, 
 
 [![CI](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/AnderCMD/Theme-Switcher/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/theme-switcher-ts.svg)](https://www.npmjs.com/package/theme-switcher-ts)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](./LICENSE)
 
 **[Live demo — see all 30 designs and try every framework snippet →](https://andercmd.github.io/Theme-Switcher/)**
 
@@ -349,4 +349,4 @@ npm run format    # prettier
 
 ## License
 
-[MIT](./LICENSE) © [Ander CMD](https://github.com/AnderCMD)
+[Apache 2.0](./LICENSE) © [Ander CMD](https://github.com/AnderCMD)
