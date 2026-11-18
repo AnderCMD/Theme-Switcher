@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-18
+
+### Changed
+
+- Relicensed from MIT to Apache License 2.0 (`LICENSE`, `package.json`, README badge and license section). Published to npm so the registry metadata reflects the new license.
+
 ## [1.1.0] - 2026-09-14
 
 ### Added
